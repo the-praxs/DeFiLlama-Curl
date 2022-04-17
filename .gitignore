@@ -1,0 +1,4 @@
+build/
+defillama/__pycache__/
+DeFiLlama_Curl.egg-info/
+dist/
