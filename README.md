@@ -20,7 +20,7 @@ For detailed information about the API endpoints, see [DeFi Llama API Documentat
 Use pip to install:
 
 ```python
-pip install DeFiLlama
+pip install DeFiLlama-Curl
 ```
 
 -----------
