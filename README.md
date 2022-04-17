@@ -78,7 +78,9 @@ llama.get_tvl_protocol(protocol='uniswap')
 llama.get_chains()
 ```
 
-7. **GET/block/{chain}/{timestamp}** : Get the closest block on a timestamp.
+#### coins : General blockchain data used by DeFi Llama and open-sourced -->
+
+1. **GET/block/{chain}/{timestamp}** : Get the closest block on a timestamp.
 Runs binary search over a blockchain's blocks to get the closest one to a timestamp.
 Every time this is run DeFi Llama adds new data to their database, so each query permanently speeds up future queries.
 ```python
@@ -86,7 +88,7 @@ Every time this is run DeFi Llama adds new data to their database, so each query
 llama.get_block_timestamp(block='fantom', timestamp=1650207158)
 ```
 
-8. **POST/prices** : Get current or historical prices of tokens by contract address.
+2. **POST/prices** : Get current or historical prices of tokens by contract address.
 If timestamp is not provided we just return the latest data.
 ```python
 # Sample data JSON
