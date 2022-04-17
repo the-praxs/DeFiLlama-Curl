@@ -13,7 +13,7 @@ BASE_URL = "https://api.llama.fi"
 PRICE_URL = "https://coins.llama.fi"
 
 # --------- Constants --------- #
-class DefiLlama:
+class defillama:
     """
     DeFi Llama class to act as DeFi Llama's API client.
     All the requests can be made through this class.
@@ -36,17 +36,13 @@ class DefiLlama:
         :param data: JSON-encoded string payload for POST
         :return: dict/list: JSON response
         """
-        if type == 'COINS':
-            url = PRICE_URL + endpoint
-        else:
-            url = BASE_URL + endpoint
-
+        url = PRICE_URL + endpoint if type == 'COINS' else BASE_URL + endpoint
         self.curl.setopt(pycurl.URL, url)
         self.curl.setopt(pycurl.WRITEDATA, self.buffer)
         self.curl.setopt(pycurl.CAINFO, certifi.where())
         self.curl.perform()
         self.curl.close()
-        
+
         response = self.buffer.getvalue()
         response = loads(response.decode('utf-8'))
 
