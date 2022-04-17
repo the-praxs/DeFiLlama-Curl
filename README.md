@@ -60,7 +60,7 @@ llama.get_protocol(protocol='aave')
 llama.get_charts()
 ```
 
-4. **GET/charts/{chain}** : Get historical TVL of a chain.
+4. **GET/charts/{chain}** : Get historical TVL of a chain.  
 Chains can be obtained from **GET/chains** or the chains property on **GET/protocols**.
 ```python
 # For e.g. Ethereum
@@ -80,15 +80,15 @@ llama.get_chains()
 
 #### coins : General blockchain data used by DeFi Llama and open-sourced -->
 
-1. **GET/block/{chain}/{timestamp}** : Get the closest block on a timestamp.
-Runs binary search over a blockchain's blocks to get the closest one to a timestamp.
+1. **GET/block/{chain}/{timestamp}** : Get the closest block on a timestamp (UNIX formatted).  
+Runs binary search over a blockchain's blocks to get the closest one to a timestamp.  
 Every time this is run DeFi Llama adds new data to their database, so each query permanently speeds up future queries.
 ```python
 # For e.g. Fantom chain for timestamp 1650207158
 llama.get_block_timestamp(block='fantom', timestamp=1650207158)
 ```
 
-2. **POST/prices** : Get current or historical prices of tokens by contract address.
+2. **POST/prices** : Get current or historical prices of tokens by contract address.  
 If timestamp is not provided we just return the latest data.
 ```python
 # Sample data JSON
@@ -100,5 +100,6 @@ body = {
   "timestamp": 1603964988
 }
 
+# API usage
 llama.post_prices(data=body)
 ```
