@@ -1,0 +1,29 @@
+package:
+  name: "defillama"
+  version: "1.2.0"
+
+source:
+  git_url: https://github.com/the-praxs/DeFiLlama-Curl
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pycurl
+  host:
+    - python
+  run:
+    - python
+    - pycurl
+    - certifi
+
+about:
+  home: https://github.com/the-praxs/DeFiLlama-Curl
+  license: Apache License 2.0
+  license_familY: Apache License 2.0
+  license_file: LICENSE
+  summary: "Unofficial Python wrapper for the DeFi Llama API using PyCurl module"
+
+extra:
+  recipe-maintainers:
+    - the-praxs

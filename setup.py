@@ -6,7 +6,6 @@ here = os.path.abspath(os.path.dirname(__file__))
 packages = ['defillama']
 
 requires = [
-    'requests>=2.18.4',
     'pycurl>=7.44.1',
 ]
 
