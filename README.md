@@ -39,7 +39,7 @@ To import the package and initialize API client
 from defillama import defillama
 
 # Client object to interact with DeFi Llama API
-llama = DefiLlama()
+llama = defillama()
 ```
 
 #### TVL : Retrieve TVL data -->
