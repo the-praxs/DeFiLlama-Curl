@@ -2,7 +2,9 @@
 
 ![Python](https://img.shields.io/pypi/pyversions/DeFiLlama-Curl?style=flat-square)
 [![PyPi](https://img.shields.io/pypi/v/DeFiLlama-Curl?style=flat-square)](https://pypi.org/project/DeFiLlama-Curl/)
-![Wheel](https://img.shields.io/pypi/wheel/DeFiLlama-Curl?style=flat-square)
+[![Wheel](https://img.shields.io/pypi/wheel/DeFiLlama-Curl?style=flat-square)](https://github.com/the-praxs/DeFiLlama-Curl/releases)
+
+[![Documentation Status](https://readthedocs.org/projects/defillama-curl/badge/?version=latest)](https://defillama-curl.readthedocs.io/en/latest/?badge=latest)
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
@@ -12,7 +14,7 @@
 
 Built from the ground up to be fast, reliable and easy to use.
 
-For detailed information about the API endpoints, see [DeFi Llama API Documentation](https://docs.llama.fi/api)
+For detailed information about the API endpoints, see [DeFi Llama API Documentation](https://defillama.com/docs/api)
 
 ### Installation:
 
@@ -30,8 +32,8 @@ pip install DeFiLlama-Curl
 
 Endpoints are accessible without requiring any API key.
 
-<!-- -----------
+-----------
 
 ### Documentation:
 
-*TODO: Add readthedocs link* -->
+Extensive documentation is available [here](http://defillama-curl.readthedocs.io/)
