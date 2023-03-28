@@ -24,7 +24,7 @@ Limitations
 Installation
 ************
 
-The package is published on `PyPi <https://pypi.org/project/DeFiLlama-Curl/>`_ and Anaconda (link). To install the module, simply run the following command in the terminal:
+The package is published on `PyPi <https://pypi.org/project/DeFiLlama-Curl/>`_ and `Anaconda <>`_. To install the module, simply run the following command in the terminal:
 
 ``pip install DeFiLlama-Curl``
 

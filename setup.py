@@ -7,7 +7,6 @@ packages = ['defillama']
 
 requires = [
     'pycurl>=7.44.1',
-    'python>=3.6.13',
 ]
 
 about = {}
@@ -31,6 +30,7 @@ setuptools.setup(
     author=about['__author__'],
     author_email=about['__author_email__'],
     url=about['__url__'],
+    python_requires='>3.6',
     packages=packages,
     install_requires=requires,
     license=about['__license__'],
