@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>abi-decoder: Function and event signatures decoded &mdash; DeFiLlama-Curl 2.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="DeFiLlama-Curl" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DeFiLlama-Curl
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">abi-decoder: Function and event signatures decoded</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-defillama.bridges">bridges: Data from DeFiLlama’s bridges dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-defillama.coins">coins: General blockchain data used by DeFiLlama</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-defillama.fees_revenue">fees and revenue: Data from DeFiLlama’s fees and revenue dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-defillama.stablecoins">stablecoins: Data from DeFiLlama’s stablecoins dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-defillama.tvl">tvl: Retrieve TVL data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-defillama.volumes">volumes: Data from DeFiLlama’s volumes dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-defillama.yields">yields: Data from DeFiLlama’s yields/APY dashboard</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DeFiLlama-Curl</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">DeFiLlama-Curl</a></li>
+      <li class="breadcrumb-item active">abi-decoder: Function and event signatures decoded</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/defillama.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-defillama.abi_decoder">
+<span id="abi-decoder-function-and-event-signatures-decoded"></span><h1>abi-decoder: Function and event signatures decoded<a class="headerlink" href="#module-defillama.abi_decoder" title="Permalink to this headline"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.abi_decoder.get_contract_signature_abi">
+<span class="sig-prename descclassname"><span class="pre">defillama.abi_decoder.</span></span><span class="sig-name descname"><span class="pre">get_contract_signature_abi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_sign</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">events_sign</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.abi_decoder.get_contract_signature_abi" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns the verbose Application Binary Interface for a function or
+event signature for a particular contract.</strong></p>
+<p><em>Endpoint: GET /fetch/contract/{chain}/{address}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chain</strong> (<em>str</em>) – Chain the smart contract is located on. Can be either
+‘arbitrum’, ‘avalanche’, ‘bsc’, ‘celo’, ‘ethereum’, ‘fantom’,
+‘optimism’, ‘polygon’, ‘tron’, ‘xdai’, ‘heco’</p></li>
+<li><p><strong>address</strong> (<em>str</em>) – Address of the smart contract</p></li>
+<li><p><strong>func_sign</strong> (<em>List</em>) – List of function signatures from the first 4 bytes
+of the Keccak-256 hash</p></li>
+<li><p><strong>events_sign</strong> (<em>List</em>) – List of event signatures</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.abi_decoder.get_signature_abi">
+<span class="sig-prename descclassname"><span class="pre">defillama.abi_decoder.</span></span><span class="sig-name descname"><span class="pre">get_signature_abi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func_sign</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">events_sign</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.abi_decoder.get_signature_abi" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns the Application Binary Interface for a function
+or event signature.</strong></p>
+<p><em>Endpoint: GET /fetch/signature</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func_sign</strong> (<em>List</em>) – List of function signatures from the first 4 bytes
+of the Keccak-256 hash</p></li>
+<li><p><strong>events_sign</strong> (<em>List</em>) – List of event signatures</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-defillama.bridges">
+<span id="bridges-data-from-defillama-s-bridges-dashboard"></span><h1>bridges: Data from DeFiLlama’s bridges dashboard<a class="headerlink" href="#module-defillama.bridges" title="Permalink to this headline"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.bridges.get_bridge_by_id">
+<span class="sig-prename descclassname"><span class="pre">defillama.bridges.</span></span><span class="sig-name descname"><span class="pre">get_bridge_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.bridges.get_bridge_by_id" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns the summary of a bridge volume and volume breakdown by chain
+with the given ID.</strong></p>
+<p>Function returns the following data:</p>
+<ul class="simple">
+<li><p>id: Bridge ID</p></li>
+<li><p>name: Bridge name</p></li>
+<li><p>displayName: Birdge name as displayed on DeFiLlama</p></li>
+<li><p>lastHourlyVolume: Bridge volume in the last hour</p></li>
+<li><p>currentDayVolume: Bridge volume in the current day</p></li>
+<li><p>lastDailyVolume: Bridge volume in the last day</p></li>
+<li><p>dayBeforeLastVolume: Bridge volume in the day before last day</p></li>
+<li><p>weeklyVolume: Bridge volume in the last week</p></li>
+<li><p>monthlyVolume: Bridge volume in the last month</p></li>
+<li><p>lastHourlyTxs: Number of deposits and withdrawls in the last hour</p></li>
+<li><p>currentDayTxs: Number of deposits and withdrawls in the current day</p></li>
+<li><p>prevDayTxs: Number of deposits and withdrawls in the last day</p></li>
+<li><p>dayBeforeLastTxs: Number of deposits and withdrawls in the day before last day</p></li>
+<li><p>weeklyTxs: Number of deposits and withdrawls in the last week</p></li>
+<li><p>monthlyTxs: Number of deposits and withdrawls in the last month</p></li>
+<li><p>chainBreakdown: Volume and transaction breakdown by chain</p></li>
+<li><p>destinationChain: Destination chain of the bridge</p></li>
+</ul>
+<p><em>Endpoint: GET /bridges/{id}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>int</em>) – Bridge ID</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.bridges.get_bridges">
+<span class="sig-prename descclassname"><span class="pre">defillama.bridges.</span></span><span class="sig-name descname"><span class="pre">get_bridges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">include_chains</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.bridges.get_bridges" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns a list of bridges with summaries of their
+recent volumes.</strong></p>
+<p>Function returns the following data:</p>
+<ul class="simple">
+<li><p>id: Bridge ID</p></li>
+<li><p>name: Bridge name</p></li>
+<li><p>displayName: Birdge name as displayed on DeFiLlama</p></li>
+<li><p>icon: Icon link as on the parent server</p></li>
+<li><p>volumePrevDay: Bridge volume on previous day</p></li>
+<li><p>volumePrev2Day: Bridge volume on day before previous day</p></li>
+<li><p>lastHourlyVolume: Bridge volume in the last hour</p></li>
+<li><p>currentDayVolume: Bridge volume in the current day</p></li>
+<li><p>lastDailyVolume: Bridge volume in the last day</p></li>
+<li><p>dayBeforeLastVolume: Bridge volume in the day before last day</p></li>
+<li><p>weeklyVolume: Bridge volume in the last week</p></li>
+<li><p>monthlyVolume: Bridge volume in the last month</p></li>
+<li><p>chains: Number of chains supported by the bridge</p></li>
+<li><p>destinationChain: Destination chain of the bridge</p></li>
+</ul>
+<p><em>Endpoint: GET /bridges</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>include_chains</strong> (<em>bool</em>) – Whether to include a list of chains.
+Defaults to True.</p></li>
+<li><p><strong>include_chains</strong> – bool:  (Default value = True)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.bridges.get_stats">
+<span class="sig-prename descclassname"><span class="pre">defillama.bridges.</span></span><span class="sig-name descname"><span class="pre">get_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.bridges.get_stats" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns a 24 hour token and address volume breakdown for a bridge.</strong></p>
+<p>Function returns the following data:</p>
+<ul class="simple">
+<li><p>date: Timestamp of the data</p></li>
+<li><p>totalTokensDeposited: Dictionary containing token address as the key and
+the total volume and amount in USD deposited as the value</p></li>
+<li><p>totalTokensWithdrawn: Dictionary containing token address as the key and
+the total volume and amount in USD withdrawn as the value</p></li>
+<li><p>totalAddressesDeposited: Dictionary containing address as the key and
+the total volume deposited in USD and number of transactions as
+the value.</p></li>
+</ul>
+<p><em>Endpoint: GET /bridgestats/{timestamp}/{chain}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>timestamp</strong> (<em>int</em>) – UNIX timestamp requested. Data returned will be for
+the 24hr period starting at 00: 00 UTC that the timestamp lands in.</p></li>
+<li><p><strong>chain</strong> (<em>str</em>) – Chain slug</p></li>
+<li><p><strong>id</strong> (<em>int</em>) – Bridge ID. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.bridges.get_transactions">
+<span class="sig-prename descclassname"><span class="pre">defillama.bridges.</span></span><span class="sig-name descname"><span class="pre">get_transactions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.bridges.get_transactions" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns all the transactions for a bridge within a date range.</strong></p>
+<p>Transactions are only returned that are bridging from the specified source
+chain and with specified address as from or to.</p>
+<p>Function returns the following data:</p>
+<ul class="simple">
+<li><p>tx_hash: Transaction hash address</p></li>
+<li><p>ts: Transaction timestamp</p></li>
+<li><p>tx_block: Transaction block number</p></li>
+<li><p>tx_from: Transaction from address</p></li>
+<li><p>tx_to: Transaction to address</p></li>
+<li><p>token: Token address</p></li>
+<li><p>amount: Amount of token transferred</p></li>
+<li><p>chain: Chain where the transaction occurred</p></li>
+<li><p>bridge_name: Bridge name that the transaction occurred on</p></li>
+<li><p>usd_value: USD value of the transaction</p></li>
+<li><p>sourceChain: Source chain of the token transfer</p></li>
+</ul>
+<p><em>Endpoint: GET /transactions/{id}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>int</em>) – Bridge ID</p></li>
+<li><p><strong>chain</strong> (<em>str</em>) – Chain slug</p></li>
+<li><p><strong>address</strong> (<em>dict</em>) – Chain name and from/to address as key-value pair</p></li>
+<li><p><strong>start</strong> (<em>int</em>) – Start timestamp for date range</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – End timestamp for date range</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – Number of transactions to return.
+Defaults to 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.bridges.get_volume">
+<span class="sig-prename descclassname"><span class="pre">defillama.bridges.</span></span><span class="sig-name descname"><span class="pre">get_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.bridges.get_volume" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns histirical volume data for a bridge, chain, or bridge on a
+particular chain.</strong></p>
+<p>Function returns the following data:</p>
+<ul class="simple">
+<li><p>date: Timestmap of the data</p></li>
+<li><p>depositUSD: Deposited volume in USD</p></li>
+<li><p>withdrawUSD: Volume withdrawn in USD</p></li>
+<li><p>depositTxs: Number of deposits</p></li>
+<li><p>withdrawTxs: Number of withdrawls</p></li>
+</ul>
+<p><em>Endpoint: GET /bridgevolume/{chain}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chain</strong> (<em>str</em>) – Chain slug. Defaults to ‘all’ for volumes
+on all chain.</p></li>
+<li><p><strong>id</strong> (<em>int</em>) – Bridge ID. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-defillama.coins">
+<span id="coins-general-blockchain-data-used-by-defillama"></span><h1>coins: General blockchain data used by DeFiLlama<a class="headerlink" href="#module-defillama.coins" title="Permalink to this headline"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.coins.get_charts">
+<span class="sig-prename descclassname"><span class="pre">defillama.coins.</span></span><span class="sig-name descname"><span class="pre">get_charts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1679976208</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'24h'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'3h'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.coins.get_charts" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns the token prices at regular time intervals.</strong></p>
+<p>Function returns a dictionary where the key is the requested token(s) with
+the contract address and the value is a dictionary containing the
+following data:</p>
+<ul class="simple">
+<li><p>symbol: Trading symbol of the token</p></li>
+<li><p>confidence: Depth of liquidity of the token indicating quality of price</p></li>
+<li><p>decimals: Smallest unit of the token that can be traded or transferred</p></li>
+<li><p>prices: List of dictionaries having the requested timestamps and
+respective prices</p></li>
+</ul>
+<p><em>Endpoint: GET /chart/{coins}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tokens</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of dictionaries having the tokens
+and their contract addresses in the form of {chain}: {address}.
+Can also use ‘coingecko’: {protocol} for tokens listed on coingecko.</p></li>
+<li><p><strong>start</strong> (<em>int</em>) – UNIX timestamp of the earliest data point
+requested. Defaults to None.</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – UNIX timestamp of the latest data point
+requested. Defaults to the current timestamp.</p></li>
+<li><p><strong>span</strong> (<em>int</em>) – Number of data points returned. Defaults to 0.</p></li>
+<li><p><strong>period</strong> (<em>str</em>) – Duration between data points. Defaults to ‘24h’.</p></li>
+<li><p><strong>search_width</strong> (<em>str</em>) – Time period on either side to find price data.
+Follows regular chart notion where W = Week, D = day, H = hour,
+M = minute (not case sensitive). Defaults to ‘6h’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.coins.get_current_prices">
+<span class="sig-prename descclassname"><span class="pre">defillama.coins.</span></span><span class="sig-name descname"><span class="pre">get_current_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'6h'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.coins.get_current_prices" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns current prices of tokens using their contract addresses.</strong></p>
+<p>Function returns a dictionary where the key is the requested token(s) with
+the contract address and the value is a dictionary containing the
+following data:</p>
+<ul class="simple">
+<li><p>price: Current price of the token</p></li>
+<li><p>symbol: Trading symbol of the token</p></li>
+<li><p>timestamp: Timestamp of the current price</p></li>
+<li><p>confidence: Depth of liquidity of the token indicating quality of price</p></li>
+</ul>
+<p><em>Endpoint: GET /prices/current/{coins}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tokens</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of dictionaries having the tokens
+and their contract addresses in the form of {chain}: {address}.
+Can also use ‘coingecko’: {protocol} for tokens listed on coingecko.</p></li>
+<li><p><strong>search_width</strong> (<em>str</em>) – Time period on either side to find price data.
+Follows regular chart notion where W = Week, D = day, H = hour,
+M = minute (not case sensitive). Defaults to ‘6h’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.coins.get_first_prices">
+<span class="sig-prename descclassname"><span class="pre">defillama.coins.</span></span><span class="sig-name descname"><span class="pre">get_first_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.coins.get_first_prices" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns the earliest timestamp price record for the token.</strong></p>
+<p>Function returns a dictionary where the key is the requested token(s) with
+the contract address and the value is a dictionary containing the
+following data:</p>
+<ul class="simple">
+<li><p>symbol: Trading symbol of the token</p></li>
+<li><p>price: Earliest recorded price of the token</p></li>
+<li><p>timestamp: Timestamp of the earliest recorded price of the token</p></li>
+</ul>
+<p><em>Endpoint: GET /prices/first/{coins}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tokens</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of dictionaries having
+{token}:{address} as the key-value pairs. Can also use
+‘coingecko’: {protocol} for tokens listed on coingecko.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.coins.get_historical_batch">
+<span class="sig-prename descclassname"><span class="pre">defillama.coins.</span></span><span class="sig-name descname"><span class="pre">get_historical_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'6h'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.coins.get_historical_batch" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns historical prices of tokens at multiple timestamps.</strong></p>
+<p>Function returns a dictionary where the key is the requested token(s) with
+the contract address and the value is a dictionary containing the
+following data:</p>
+<ul class="simple">
+<li><p>symbol: Trading symbol of the token</p></li>
+<li><p>prices: List of dictionaries having the requested timestamps, prices and
+confidence of the token</p></li>
+</ul>
+<p><em>Endpoint: GET /batchHistorical</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tokens</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>List</em><em>]</em>) – List of dictionaries having the tokens
+and their contract addresses in the form of {chain}: {address}.
+Can also use ‘coingecko’: {protocol} for tokens listed on coingecko.</p></li>
+<li><p><strong>search_width</strong> (<em>str</em>) – Time period on either side to find price data.
+Follows regular chart notion where W = Week, D = day, H = hour,
+M = minute (not case sensitive). Defaults to ‘6h’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.coins.get_historical_prices">
+<span class="sig-prename descclassname"><span class="pre">defillama.coins.</span></span><span class="sig-name descname"><span class="pre">get_historical_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1679976208</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'6h'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.coins.get_historical_prices" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns historical prices of tokens using their contract addresses.</strong></p>
+<p>Function returns a dictionary where the key is the requested token(s) with
+the contract address and the value is a dictionary containing the
+following data:</p>
+<ul class="simple">
+<li><p>price: Historical price of the token</p></li>
+<li><p>symbol: Trading symbol of the token</p></li>
+<li><p>timestamp: Timestamp of the historical price</p></li>
+<li><p>confidence: Depth of liquidity of the token indicating quality of price</p></li>
+</ul>
+<p><em>Endpoint: GET /prices/historical/{timestamp}/{coins}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tokens</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of dictionaries having the tokens
+and their contract addresses in the form of {chain}: {address}.
+Can also use ‘coingecko’: {protocol} for tokens listed on coingecko.</p></li>
+<li><p><strong>timestamp</strong> (<em>int</em>) – UNIX timestamp when the historical price
+is requested. Defaults to the current timestamp.</p></li>
+<li><p><strong>search_width</strong> (<em>str</em>) – Time period on either side to find price data.
+Follows regular chart notion where W = Week, D = day, H = hour,
+M = minute (not case sensitive). Defaults to ‘6h’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.coins.get_nearest_block">
+<span class="sig-prename descclassname"><span class="pre">defillama.coins.</span></span><span class="sig-name descname"><span class="pre">get_nearest_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.coins.get_nearest_block" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns the nearest block to the timestamp.</strong></p>
+<p>Function runs a binary search over a blockchain’s blocks to get the closest
+one to a timestamp. Every time this is run new data is added to DeFiLlama’s
+database, so each query permanently speeds up future queries. The height
+and the timestamp of the block are returned.</p>
+<p><em>Endpoint: GET /block/{chain}/{timestamp}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chain</strong> (<em>str</em>) – Chain slug</p></li>
+<li><p><strong>timestamp</strong> (<em>int</em>) – Timestamp of the block</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.coins.get_percentage">
+<span class="sig-prename descclassname"><span class="pre">defillama.coins.</span></span><span class="sig-name descname"><span class="pre">get_percentage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">look_forward</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'24h'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.coins.get_percentage" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns the percentage change of the token prices over time.</strong></p>
+<p>Function returns a dictionary having {tokens}:{percentage change} as the
+key-value pairs.</p>
+<p><em>Endpoint: GET /percentage/{coins}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tokens</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of dictionaries having the tokens
+and their contract addresses in the form of {chain}: {address}.
+Can also use ‘coingecko’: {protocol} for tokens listed on coingecko.</p></li>
+<li><p><strong>timestamp</strong> (<em>int</em>) – UNIX timestamp when the historical price is requested.
+Defaults to the current timestamp.</p></li>
+<li><p><strong>look_forward</strong> (<em>bool</em>) – Whether to request the duration after the provided
+timestamp. Defaults to False (looking back).</p></li>
+<li><p><strong>period</strong> (<em>str</em>) – Duration between data points. Follows regular chart notion
+where W = Week, D = day, H = hour, M = minute (not case sensitive).
+Defaults to ‘24h’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-defillama.fees_revenue">
+<span id="fees-and-revenue-data-from-defillama-s-fees-and-revenue-dashboard"></span><h1>fees and revenue: Data from DeFiLlama’s fees and revenue dashboard<a class="headerlink" href="#module-defillama.fees_revenue" title="Permalink to this headline"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.fees_revenue.get_overview">
+<span class="sig-prename descclassname"><span class="pre">defillama.fees_revenue.</span></span><span class="sig-name descname"><span class="pre">get_overview</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exclude_total_data_chart</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_total_data_chart_breakdown</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'daily'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'fees'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.fees_revenue.get_overview" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns a list of protocols alongwith summaries of their fees and
+revenue data and fees/revenue historical data.</strong></p>
+<p>Chain name is optional and if provided, the function returns the data
+for the specified chain only.</p>
+<p>Function returns the following data:</p>
+<ul>
+<li><p>totalDataChart: List of aggregated chart data with their timestamp</p></li>
+<li><p>totalDataChartBreakdown: List of aggregated chart data broken down by
+chains with their timestamp</p></li>
+<li><p>protocols: List of dictionaries that may contain the following data -</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>name: Name of the protocol</p></li>
+<li><p>disabled: Whether the protocol is disabled or not</p></li>
+<li><p>displayName: Protocol name as displayed on DeFiLlama</p></li>
+<li><p>module: Name of the protocol as mentioned on adapter API</p></li>
+<li><p>category: Category to which the protocol belongs</p></li>
+<li><p>logo: Protocol logo URL</p></li>
+<li><p>change_1d: Change in the protocol’s fees/revenue in the last 24 hours</p></li>
+<li><p>change_7d: Change in the protocol’s fees/revenue in the last 7 days</p></li>
+<li><p>change_1m: Change in the protocol’s fees/revenue in the last 30 days</p></li>
+<li><p>change_7dover7d: Change in the protocol’s fees/revenue in the last
+7 days over the change in the protocol’s fees/revenue in the last
+7 days</p></li>
+<li><p>change_30dover30d: Change in the protocol’s fees/revenue in the last
+30 days over the change in the protocol’s fees/revenue in the
+last 30 days</p></li>
+<li><p>total24h: Total fees/revenue collected by the protocol in the
+last 24 hours</p></li>
+<li><p>total48hto24h: Total fees/revenue collected by the protocol in the
+last 48 hours to the last 24 hours</p></li>
+<li><p>total7d: Total fees/revenue collected by the protocol in the
+last 7 days</p></li>
+<li><p>total30d: Total fees/revenue collected by the protocol in the
+last 30 days</p></li>
+<li><p>total14dto7d: Total fees/revenue collected by the protocol in the
+last 14 days to the last 7 days</p></li>
+<li><p>total60dto30d: Total fees/revenue collected by the protocol in the
+last 60 days to the last 30 days</p></li>
+<li><p>totalAllTime: Total fees/revenue collected by the protocol since
+the beginning</p></li>
+<li><p>breakdown24h: Total fees/revenue collected by the protocol in the
+last 24 hours broken down by chains</p></li>
+<li><p>chains: List of chains supported by the protocol</p></li>
+<li><p>protocolType: Whether its a protocol or a chain</p></li>
+<li><p>methodologyURL: URL of the methodology used to calculate the fees</p></li>
+<li><p>methodology: Dictionary containing the methodology used to calculate
+the fees</p></li>
+<li><p>parentProtocol: Name of the parent protocol</p></li>
+<li><p>latestFetchIsOk: Whether the latest fetch was successful or not</p></li>
+<li><p>dailyRevenue: Daily revenue of the protocol</p></li>
+<li><p>dailyUserFees: Daily user fees of the protocol</p></li>
+<li><p>dailyHoldersRevenue: Daily holders revenue of the protocol</p></li>
+<li><p>dailyCreatorRevenue: Daily creator revenue of the protocol</p></li>
+<li><p>dailySupplySideRevenue: Daily supply side revenue of the protocol</p></li>
+<li><p>dailyProtocolRevenue: Daily protocol revenue of the protocol</p></li>
+<li><p>dailyFees: Daily fees collected by the protocol</p></li>
+<li><p>totalFees: Totoal fees collected by the protocol</p></li>
+<li><p>totalUserFees: Total user fees collected by the protocol</p></li>
+<li><p>totalRevenue: Total revenue collected by the protocol</p></li>
+<li><p>totalHoldersRevenue: Total holders revenue collected by the protocol</p></li>
+<li><p>totalCreatorRevenue: Total creator revenue collected by the protocol</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>allChains: List of all the chains that are tracked on DeFiLlama</p></li>
+<li><p>total24h: Total fees collected in the last 24 hours</p></li>
+<li><p>total48hto24h: Total fees collected in the last 48 hours to the</p></li>
+<li><p>last 24 hours</p></li>
+<li><p>total7d: Total fees collected in the last 7 days</p></li>
+<li><p>total14dto7d: Total fees collected in the last 14 days to the
+last 7 days</p></li>
+<li><p>total60dto30d: Total fees collected in the last 60 days to the
+last 30 days</p></li>
+<li><p>total30d: Total fees collected in the last 30 days</p></li>
+<li><p>change_1d: Change in the total fees in the last 24 hours</p></li>
+<li><p>change_7d: Change in the total fees in the last 7 days</p></li>
+<li><p>change_1m: Change in the total fees in the last 30 days</p></li>
+<li><p>change_7dover7d: Change in the total fees in the last 7 days over the</p></li>
+<li><p>change in the total fees in the last 7 days</p></li>
+<li><p>change_30dover30d: Change in the total fees in the last 30 days over the</p></li>
+<li><p>change in the total fees in the last 30 days</p></li>
+<li><p>breakdown24h: Total fees collected in the last 24 hours broken down
+by chains</p></li>
+<li><p>dailyRevenue: Daily revenue collected by all the protocols</p></li>
+<li><p>dailyUserFees: Daily user fees collected by all the protocols</p></li>
+<li><p>dailyHoldersRevenue: Daily holders revenue collected by all the protocols</p></li>
+<li><p>dailyCreatorRevenue: Daily creator revenue collected by all the protocols</p></li>
+<li><p>dailySupplySideRevenue: Daily supply side revenue collected by
+all the protocols</p></li>
+<li><p>dailyProtocolRevenue: Daily protocol revenue collected by all
+the protocols</p></li>
+</ul>
+<p><em>Endpoints: GET /overview/fees, GET /overview/fees/{chain}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exclude_total_data_chart</strong> (<em>bool</em>) – To exclude aggregated chart
+from response. Defaults to False.</p></li>
+<li><p><strong>exclude_total_data_chart_breakdown</strong> (<em>bool</em>) – To exclude broken
+down chart from response. Defaults to False.</p></li>
+<li><p><strong>data</strong> (<em>str</em>) – Request ‘daily’ or ‘total’ data.
+Defaults to ‘daily’.</p></li>
+<li><p><strong>type</strong> (<em>str</em>) – Request ‘fees’ or ‘revenue’ data.
+Defaults to ‘fees’.</p></li>
+<li><p><strong>chain</strong> (<em>str</em>) – Chain slug. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.fees_revenue.get_summary">
+<span class="sig-prename descclassname"><span class="pre">defillama.fees_revenue.</span></span><span class="sig-name descname"><span class="pre">get_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'daily'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'fees'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.fees_revenue.get_summary" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns a summary of the fees/revenue collected by a protocol with
+historical data.</strong></p>
+<p>Function may return the following data:</p>
+<ul class="simple">
+<li><p>id: Protocol ID</p></li>
+<li><p>name: Protocol name</p></li>
+<li><p>url: Protocol URL</p></li>
+<li><p>description: Protocol description</p></li>
+<li><p>logo: Protocol logo URL</p></li>
+<li><p>chains: List of chains supported by the protocol</p></li>
+<li><p>gecko_id: CoinGecko ID of the protocol</p></li>
+<li><p>cmcId: CoinMarketCap ID of the protocol</p></li>
+<li><p>twitter: Twitter handle of the protocol</p></li>
+<li><p>governanceID: Governance ID of the protocol</p></li>
+<li><p>displayName: Protocol name as displayed on DeFiLlama</p></li>
+<li><p>total24h: Total fees/revenue collected by the protocol in the
+last 24 hours</p></li>
+<li><p>totalAllTime: Total fees/revenue collected by the protocol
+since the beginning</p></li>
+<li><p>latestFetchIsOk: Whether the latest fetch was successful or not</p></li>
+<li><p>disabled: Whether the protocol is disabled or not</p></li>
+<li><p>change_1d: Change in the total fees/revenue in the last 24 hours</p></li>
+<li><p>methodologyURL: URL of the methodology used to calculate the fees</p></li>
+<li><p>module: Name of the protocol as mentioned on adapter API</p></li>
+<li><p>totalDataChart: List of aggregated chart data with their timestamp.
+This data is only available for total data</p></li>
+<li><p>totalDataChartBreakdown: List of aggregated chart data broken down by
+chains with their timestamp. This data is only available for total data
+childProtocols: Protocols derived from this protocol</p></li>
+</ul>
+<p><em>Endpoint: GET /summary/fees/{protocol}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>protocol</strong> (<em>str</em>) – Protocol slug</p></li>
+<li><p><strong>data</strong> (<em>str</em>) – Request ‘daily’ or ‘total’ data.
+Defaults to ‘daily’.</p></li>
+<li><p><strong>type</strong> (<em>str</em>) – Request ‘fees’ or ‘revenue’ data.
+Defaults to ‘fees’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-defillama.stablecoins">
+<span id="stablecoins-data-from-defillama-s-stablecoins-dashboard"></span><h1>stablecoins: Data from DeFiLlama’s stablecoins dashboard<a class="headerlink" href="#module-defillama.stablecoins" title="Permalink to this headline"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.stablecoins.get_chains">
+<span class="sig-prename descclassname"><span class="pre">defillama.stablecoins.</span></span><span class="sig-name descname"><span class="pre">get_chains</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.stablecoins.get_chains" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns current market cap sum of all stablecoins on each chain.</strong></p>
+<p>Function requires no arguments and returns the following data:</p>
+<ul class="simple">
+<li><p>gecko_id: CoinGecko ID of the stablecoin</p></li>
+<li><p>totalCirculatingUSD: Market cap of all circulating pegged currencies
+in USD</p></li>
+<li><p>tokenSymbol: Trading symbol of the stablecoin</p></li>
+<li><p>name: Name of the chain on which the stablecoin is available</p></li>
+</ul>
+<p><em>Endpoint: GET /stablecoinchains</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Requested data</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.stablecoins.get_charts">
+<span class="sig-prename descclassname"><span class="pre">defillama.stablecoins.</span></span><span class="sig-name descname"><span class="pre">get_charts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stablecoin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.stablecoins.get_charts" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns historical market cap sum of all stablecoins or on a given
+chain.</strong></p>
+<p>Function returns the following data:</p>
+<ul class="simple">
+<li><p>date: Timestamp of the data</p></li>
+<li><p>totalCirculating: Market cap of all circulating pegged currencies</p></li>
+<li><p>totalUnreleased: Market cap of all unreleased circulating pegged
+currencies</p></li>
+<li><p>totalCirculatingUSD: Market cap of all circulating pegged currencies
+in USD</p></li>
+<li><p>totalMintedUSD: Market cap of all minted pegged currencies in USD</p></li>
+<li><p>totalBridgedToUSD: Market cap of all pegged currencies bridged to USD</p></li>
+</ul>
+<p><em>Endpoints: GET /stablecoincharts/all, GET /stablecoincharts/{chain}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>str</em>) – Request data for ‘all’ stablecoins or those in ‘chain’.
+Defaults to “all”.</p></li>
+<li><p><strong>chain</strong> (<em>str</em>) – Chain slug. Requires type argument to be ‘chain’.
+Defaults to None.</p></li>
+<li><p><strong>stablecoin</strong> (<em>int</em>) – Stablecoin ID. Requires type argument to be ‘chain’.
+Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.stablecoins.get_distribution">
+<span class="sig-prename descclassname"><span class="pre">defillama.stablecoins.</span></span><span class="sig-name descname"><span class="pre">get_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stablecoin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.stablecoins.get_distribution" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns the historical market cap and historical chain distribution
+of a stablecoin.</strong></p>
+<p>Function returns the following data:</p>
+<ul class="simple">
+<li><p>id: Stablecoin ID as per DeFiLlama</p></li>
+<li><p>name: Name of the stablecoin</p></li>
+<li><p>address: Stablecoin address</p></li>
+<li><p>symbol: Trading symbol of the stablecoin</p></li>
+<li><p>url: Link to the stablecoin’s website</p></li>
+<li><p>description: Short summary describing the stablecoin</p></li>
+<li><p>mintRedeemDescription: Short description describing the minting
+and exchange of the stablecoin</p></li>
+<li><p>onCoinGecko: Whether the stablecoin is listed on CoinGecko</p></li>
+<li><p>gecko_id: CoinGecko ID of the stablecoin</p></li>
+<li><p>cmcId: CoinMarketCap ID of the stablecoin</p></li>
+<li><p>pegType: Currency pegged to</p></li>
+<li><p>pegMechanism: Type of currency pegged (fiat or crypto backed)</p></li>
+<li><p>priceSource: Major source of price data</p></li>
+<li><p>auditLinks: List of URL to the audit reports</p></li>
+<li><p>twitter: Twitter link of the stablecoin</p></li>
+<li><p>wiki: DeFiLlama wiki page for the stablecoin</p></li>
+<li><p>chainBalances: Dictionary containing the chains on which the
+stablecoin is available alongwith their ‘tokens’, ‘circulating’,
+‘minted’, ‘unreleased’ and ‘bridgedTo’ amounts.</p></li>
+</ul>
+<p><em>Endpoint: GET /stablecoin/{asset}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>stablecoin</strong> (<em>int</em>) – Stablecoin ID.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.stablecoins.get_prices">
+<span class="sig-prename descclassname"><span class="pre">defillama.stablecoins.</span></span><span class="sig-name descname"><span class="pre">get_prices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.stablecoins.get_prices" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns historical prices of all stablecoins.</strong></p>
+<p>Function requires no arguments and returns the following data:</p>
+<ul class="simple">
+<li><p>date: Timestamp of the data</p></li>
+<li><p>prices: Dictionary containing the stablecoin name and its price in USD</p></li>
+</ul>
+<p><em>Endpoint: GET /stablecoinprices</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Requested data</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.stablecoins.get_stablecoins">
+<span class="sig-prename descclassname"><span class="pre">defillama.stablecoins.</span></span><span class="sig-name descname"><span class="pre">get_stablecoins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">include_prices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.stablecoins.get_stablecoins" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns a list of all stablecoins alongwith their circulating amounts.</strong></p>
+<p>Function returns the following data:</p>
+<ul class="simple">
+<li><p>id: Stablecoin ID as per DeFiLlama</p></li>
+<li><p>name: Name of the stablecoin</p></li>
+<li><p>symbol: Trading symbol of the stablecoin</p></li>
+<li><p>gecko_id: CoinGecko ID of the stablecoin</p></li>
+<li><p>pegType: Currency pegged to</p></li>
+<li><p>pegMechanism: Type of currency pegged (fiat or crypto backed)</p></li>
+<li><p>priceSource: Major source of price data</p></li>
+<li><p>circulating: Current circulating amount in pegged currency</p></li>
+<li><p>circulatingPrevDay: Circulating amount previous day in pegged currency</p></li>
+<li><p>circulatingPrevWeek: Circulating amount previous week in pegged currency</p></li>
+<li><p>circulatingPrevMonth: Circulating amount previous month in pegged
+currency</p></li>
+<li><p>chainCirculating: Chains circulating the stablecoin alongwith their
+‘circulating’, ‘circulatingPrevDay’, ‘circulatingPrevWeek’ and
+‘circulatingPrevMonth’.</p></li>
+<li><p>chains: List of chains on which the stablecoin is available</p></li>
+</ul>
+<p><em>Endpoint: GET /stablecoins</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>include_prices</strong> (<em>bool</em>) – whether to include current stablecoin prices.
+Defaults to True.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-defillama.tvl">
+<span id="tvl-retrieve-tvl-data"></span><h1>tvl: Retrieve TVL data<a class="headerlink" href="#module-defillama.tvl" title="Permalink to this headline"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.tvl.get_chains">
+<span class="sig-prename descclassname"><span class="pre">defillama.tvl.</span></span><span class="sig-name descname"><span class="pre">get_chains</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.tvl.get_chains" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns basic information about all chains.</strong></p>
+<p>Function returns the following data for each chain:</p>
+<ul class="simple">
+<li><p>gecko_id: CoinGecko ID of the chain</p></li>
+<li><p>tvl: Current TVL in the chain</p></li>
+<li><p>tokenSymbol: Chain symbol (e.g. ETH)</p></li>
+<li><p>cmcId: CoinMarketCap ID of the chain</p></li>
+<li><p>name: Given name of the chain</p></li>
+<li><p>chainId: DeFillama ID of the chain</p></li>
+</ul>
+<p><em>Endpoint: GET /chains</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Requested data</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[Dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.tvl.get_charts">
+<span class="sig-prename descclassname"><span class="pre">defillama.tvl.</span></span><span class="sig-name descname"><span class="pre">get_charts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.tvl.get_charts" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns historical TVL of all or a specified chain.</strong></p>
+<p>Passing a chain is optional as historical TVL for all chains is returned
+by default.</p>
+<p>Function returns the following data:</p>
+<ul class="simple">
+<li><p>date: Date of the TVL</p></li>
+<li><p>tvl: Historical TVL</p></li>
+</ul>
+<p><em>Endpoints: GET /charts, GET /charts/{chain}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>chain</strong> (<em>str</em>) – Chain slug. Defaults to None.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.tvl.get_historical_chains_tvl">
+<span class="sig-prename descclassname"><span class="pre">defillama.tvl.</span></span><span class="sig-name descname"><span class="pre">get_historical_chains_tvl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.tvl.get_historical_chains_tvl" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns historical TVL (excludes liquid staking and double counted TVL)
+for all or a specified chain.</strong></p>
+<p>Passing a chain is optional as historical TVL (excluding liquid staking
+and double counted TVL) for all chains is returned by default.</p>
+<p>Function returns the following data:</p>
+<ul class="simple">
+<li><p>date: Date of the TVL</p></li>
+<li><p>tvl: Historical TVL (excluding liquid staking and double counted TVL)</p></li>
+</ul>
+<p><em>Endpoints: GET /historicalChainTVL, GET /historicalChainTVL/{chain}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>chain</strong> (<em>str</em>) – Chain slug. Defaults to None.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.tvl.get_protocol_tvl">
+<span class="sig-prename descclassname"><span class="pre">defillama.tvl.</span></span><span class="sig-name descname"><span class="pre">get_protocol_tvl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#defillama.tvl.get_protocol_tvl" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns the current TVL of a specified protocol.</strong></p>
+<p><em>Endpoint: GET /tvl/{protocol}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>protocol</strong> (<em>str</em>) – Protocol slug</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Current TVL of the specified protocol</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.tvl.get_protocols">
+<span class="sig-prename descclassname"><span class="pre">defillama.tvl.</span></span><span class="sig-name descname"><span class="pre">get_protocols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.tvl.get_protocols" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns basic protocol data with their total TVL and TVL in
+each chain.</strong></p>
+<p>When no protocol is specified, function returns basic data for all
+protocols alongwith their TVL. When a protocol is specified, function
+returns basic data and additional protocol specific data.</p>
+<p>Function may return the following data when no protocol is specified:</p>
+<ul class="simple">
+<li><p>id: DeFiLlama ID of the protocol</p></li>
+<li><p>name: Registered protocol name</p></li>
+<li><p>address: Protocol address</p></li>
+<li><p>symbol: Protocol symbol</p></li>
+<li><p>url: URL of the protocol website</p></li>
+<li><p>description: Summary of the prtocol</p></li>
+<li><p>chain: Chain the protocol is deployed on</p></li>
+<li><p>logo: URL to the protocol logo</p></li>
+<li><p>audits: Audits done on the protocol</p></li>
+<li><p>audit_note: Audit note for the protocol</p></li>
+<li><p>gecko_id: CoinGecko ID of the protocol</p></li>
+<li><p>cmcId: CoinMarketCap ID of the chain</p></li>
+<li><p>category: Type of the protocol</p></li>
+<li><p>chains: List of chains where the protocol is deployed.</p></li>
+<li><p>module: ???</p></li>
+<li><p>twitter: Twitter username associated with the protocol</p></li>
+<li><p>forkedFrom: Parent protocol of the protocol</p></li>
+<li><p>oracles: List of oracles used by the protocol</p></li>
+<li><p>listedAt: Timestamp when the protocol was listed</p></li>
+<li><p>slug: Protocol slug name</p></li>
+<li><p>tvl: Current TVL in the protocol</p></li>
+<li><p>chainTvls: Current TVL in each chain on which the protocol is deployed.
+Note that this property changes to currentChainTvls when a chain is
+specified.</p></li>
+<li><p>change_1h: Change in TVL within 1 hour</p></li>
+<li><p>change_1d: Change in TVL within 1 day</p></li>
+<li><p>change_7d: Change in TVL within 7 days</p></li>
+<li><p>mcap: Current market cap of the protocol</p></li>
+</ul>
+<p>If a protocol is specified the following data maybe returned:</p>
+<ul class="simple">
+<li><p>audit_links: Links to the audits done on the protocol</p></li>
+<li><p>treasury: Treasury address of the protocol</p></li>
+<li><p>openSource: Whether the protocol is open source or not (True/False)</p></li>
+<li><p>governanceID: Snapshot of the ENS address of the protocol</p></li>
+<li><p>currentChainTvls: Current TVL in each deployed chain of the deployed.</p></li>
+<li><p>chainTvls: Historical TVL in each chain on which the protocol is deployed</p></li>
+<li><p>tokens: History of TVL of associated tokens</p></li>
+<li><p>tvl: History of TVL of the protocol</p></li>
+<li><p>isParentProtocol: Whether the protocol is derived or not (True/False)</p></li>
+<li><p>metrics: Historical data of the protocol’s metrics</p></li>
+<li><p>raises: Historical data of the protocol’s funding rounds</p></li>
+<li><p>tokenBreakdowns: Token TVL history</p></li>
+<li><p>otherProtocols: List of protocols derived from the protocol</p></li>
+<li><p>hallmarks: Hitory of the protocol’s hallmarks</p></li>
+</ul>
+<p><em>Endpoints: GET /protocols, GET /protocol/{protocol}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>protocol</strong> (<em>str</em>) – Protocol slug. Defaults to None.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Dict] | Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-defillama.volumes">
+<span id="volumes-data-from-defillama-s-volumes-dashboards"></span><h1>volumes: Data from DeFiLlama’s volumes dashboards<a class="headerlink" href="#module-defillama.volumes" title="Permalink to this headline"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.volumes.get_dex_overview">
+<span class="sig-prename descclassname"><span class="pre">defillama.volumes.</span></span><span class="sig-name descname"><span class="pre">get_dex_overview</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exclude_total_data_chart</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_total_data_chart_breakdown</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'daily'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.volumes.get_dex_overview" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns all dexs with their volume summaries and history for all or
+specified chain.</strong></p>
+<p>Function may return the following data:</p>
+<ul>
+<li><p>totalDataChart: List of aggregated chart data with their timestamp</p></li>
+<li><p>totalDataChartBreakdown: List of aggregated chart data broken down by
+chains with their timestamp</p></li>
+<li><p>protocols: List of dictionaries that may contain the following data -</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>name: Name of the protocol</p></li>
+<li><p>disabled: Whether the protocol is disabled or not</p></li>
+<li><p>displayName: Protocol name as displayed on DeFiLlama</p></li>
+<li><p>module: Name of the protocol as mentioned on adapter API</p></li>
+<li><p>category: Category to which the protocol belongs</p></li>
+<li><p>logo: Protocol logo URL</p></li>
+<li><p>change_1d: Change in the protocol’s volume in the last 24 hours</p></li>
+<li><p>change_7d: Change in the protocol’s volume in the last 7 days</p></li>
+<li><p>change_1m: Change in the protocol’s volume in the last 30 days</p></li>
+<li><p>change_7dover7d: Change in the protocol’s volume in the last
+7 days over the change in the protocol’s fees in the last 7 days</p></li>
+<li><p>change_30dover30d: Change in the protocol’s volume in the last
+30 days over the change in the protocol’s volume in the
+last 30 days</p></li>
+<li><p>total24h: Total volume collected by the protocol in the
+last 24 hours</p></li>
+<li><p>total48hto24h: Total volume collected by the protocol in the
+last 48 hours to the last 24 hours</p></li>
+<li><p>total7d: Total volume collected by the protocol in the
+last 7 days</p></li>
+<li><p>total30d: Total volume collected by the protocol in the
+last 30 days</p></li>
+<li><p>total14dto7d: Total volume collected by the protocol in the
+last 14 days to the last 7 days</p></li>
+<li><p>total60dto30d: Total volume collected by the protocol in the
+last 60 days to the last 30 days</p></li>
+<li><p>totalAllTime: Total volume collected by the protocol since
+the beginning</p></li>
+<li><p>breakdown24h: Total volume collected by the protocol in the
+last 24 hours broken down by chains</p></li>
+<li><p>chains: List of chains supported by the protocol</p></li>
+<li><p>protocolType: Whether its a protocol or a chain</p></li>
+<li><p>methodologyURL: URL of the methodology used to calculate the fees</p></li>
+<li><p>methodology: Dictionary containing the methodology used to calculate
+the fees</p></li>
+<li><p>latestFetchIsOk: Whether the latest fetch was successful or not</p></li>
+<li><p>dailyVolume: Daily volume of the protocol</p></li>
+<li><p>totalVolume: Total volume of the protocol</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p><em>Endpoint: GET /overview/dexs, GET /overview/dexs/{chain}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exclude_total_data_chart</strong> (<em>bool</em>) – To exclude aggregated chart
+from response. Defaults to False.</p></li>
+<li><p><strong>exclude_total_data_chart_breakdown</strong> (<em>bool</em>) – To exclude broken
+down chart from response. Defaults to False.</p></li>
+<li><p><strong>data</strong> (<em>str</em>) – Request ‘daily’ or ‘total’ volume data.
+Defaults to ‘daily’.</p></li>
+<li><p><strong>chain</strong> (<em>str</em>) – Chain slug. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.volumes.get_dex_summary">
+<span class="sig-prename descclassname"><span class="pre">defillama.volumes.</span></span><span class="sig-name descname"><span class="pre">get_dex_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_total_data_chart</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_total_data_chart_breakdown</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'daily'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.volumes.get_dex_summary" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns summary of a dex volume with historical data.</strong></p>
+<p>Function may return the following data:</p>
+<ul class="simple">
+<li><p>name: Name of the protocol</p></li>
+<li><p>displayName: Protocol name as displayed on DeFiLlama</p></li>
+<li><p>disabled: Whether the protocol is disabled or not</p></li>
+<li><p>logo: URL to the logo of the protocol</p></li>
+<li><p>address: Protocol address on the blockchain</p></li>
+<li><p>url: Protocol logo URL</p></li>
+<li><p>description: Protocol description</p></li>
+<li><p>audits: List of audits</p></li>
+<li><p>category: Category to which the protocol belongs</p></li>
+<li><p>twitter: Twitter handle of the protocol</p></li>
+<li><p>audit_links: List of audit links</p></li>
+<li><p>forkedFrom: Parent protocol from which this protocol was forked</p></li>
+<li><p>gecko_id: CoinGecko ID of the protocol</p></li>
+<li><p>totalDataChart: List of aggregated chart data with their timestamp</p></li>
+<li><p>totalDataChartBreakdown: List of aggregated chart data broken down by
+chains with their timestamp</p></li>
+<li><p>total24h: Total volume collected by the protocol in the
+last 24 hours</p></li>
+<li><p>total48hto24h: Total volume collected by the protocol in the
+last 48 hours to the last 24 hours</p></li>
+<li><p>total14dto7d: Total volume collected by the protocol in the
+last 14 days to the last 7 days</p></li>
+<li><p>totalAllTime: Total volume collected by the protocol since
+the beginning</p></li>
+<li><p>change_1d: Change in the protocol’s volume in the last 24 hours</p></li>
+<li><p>module: Name of the protocol as mentioned on adapter API</p></li>
+<li><p>protocolType: Whether its a protocol or a chain</p></li>
+<li><p>chains: List of chains supported by the protocol</p></li>
+<li><p>methodologyURL: URL of the methodology used to calculate the fees</p></li>
+<li><p>latestFetchIsOk: Whether the latest fetch was successful or not</p></li>
+<li><p>childProtocols: Protocols derived from this protocol</p></li>
+</ul>
+<p><em>Endpoint: GET /summary/dexs/{protocol}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>protocol</strong> (<em>str</em>) – Protocol slug</p></li>
+<li><p><strong>exclude_total_data_chart</strong> (<em>bool</em>) – To exclude aggregated chart
+from response. Defaults to False.</p></li>
+<li><p><strong>exclude_total_data_chart_breakdown</strong> (<em>bool</em>) – To exclude broken
+down chart from response. Defaults to False.</p></li>
+<li><p><strong>data</strong> (<em>str</em>) – Request ‘daily’ or ‘total’ volume data.
+Defaults to ‘daily’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.volumes.get_options_overview">
+<span class="sig-prename descclassname"><span class="pre">defillama.volumes.</span></span><span class="sig-name descname"><span class="pre">get_options_overview</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exclude_total_data_chart</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_total_data_chart_breakdown</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'daily'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'premium'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.volumes.get_options_overview" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns all options dexs with their volume summaries and history for
+all or specified chain.</strong></p>
+<p>Function may return the following data:</p>
+<ul>
+<li><p>totalDataChart: List of aggregated chart data with their timestamp</p></li>
+<li><p>totalDataChartBreakdown: List of aggregated chart data broken down by
+chains with their timestamp</p></li>
+<li><p>protocols: List of dictionaries that may contain the following data -</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>name: Name of the protocol</p></li>
+<li><p>disabled: Whether the protocol is disabled or not</p></li>
+<li><p>displayName: Protocol name as displayed on DeFiLlama</p></li>
+<li><p>module: Name of the protocol as mentioned on adapter API</p></li>
+<li><p>category: Category to which the protocol belongs</p></li>
+<li><p>logo: Protocol logo URL</p></li>
+<li><p>change_1d: Change in the protocol’s volume in the last 24 hours</p></li>
+<li><p>change_7d: Change in the protocol’s volume in the last 7 days</p></li>
+<li><p>change_1m: Change in the protocol’s volume in the last 30 days</p></li>
+<li><p>change_7dover7d: Change in the protocol’s volume in the last
+7 days over the change in the protocol’s fees in the last 7 days</p></li>
+<li><p>change_30dover30d: Change in the protocol’s volume in the last
+30 days over the change in the protocol’s volume in the
+last 30 days</p></li>
+<li><p>total24h: Total volume collected by the protocol in the
+last 24 hours</p></li>
+<li><p>total48hto24h: Total volume collected by the protocol in the
+last 48 hours to the last 24 hours</p></li>
+<li><p>total7d: Total volume collected by the protocol in the
+last 7 days</p></li>
+<li><p>total30d: Total volume collected by the protocol in the
+last 30 days</p></li>
+<li><p>total14dto7d: Total volume collected by the protocol in the
+last 14 days to the last 7 days</p></li>
+<li><p>total60dto30d: Total volume collected by the protocol in the
+last 60 days to the last 30 days</p></li>
+<li><p>totalAllTime: Total volume collected by the protocol since
+the beginning</p></li>
+<li><p>breakdown24h: Total volume collected by the protocol in the
+last 24 hours broken down by chains</p></li>
+<li><p>chains: List of chains supported by the protocol</p></li>
+<li><p>protocolType: Whether its a protocol or a chain</p></li>
+<li><p>methodologyURL: URL of the methodology used to calculate the fees</p></li>
+<li><p>methodology: Dictionary containing the methodology used to calculate
+the fees</p></li>
+<li><p>latestFetchIsOk: Whether the latest fetch was successful or not</p></li>
+<li><p>dailyPremiumVolume: Daily premium volume of the protocol</p></li>
+<li><p>totalNotionalVolume: Total notional volume of the protocol</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p><em>Endpoint: GET /overview/options, GET /overview/options/{chain}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exclude_total_data_chart</strong> (<em>bool</em>) – To exclude aggregated chart
+from response. Defaults to False.</p></li>
+<li><p><strong>exclude_total_data_chart_breakdown</strong> (<em>bool</em>) – To exclude broken
+down chart from response. Defaults to False.</p></li>
+<li><p><strong>data</strong> (<em>str</em>) – Request ‘daily’ or ‘total’ volume data.
+Defaults to ‘daily’.</p></li>
+<li><p><strong>type</strong> (<em>str</em>) – Request ‘premium’ or ‘notional’ volume data.
+Defaults to ‘premium’.</p></li>
+<li><p><strong>chain</strong> (<em>str</em>) – Chain slug. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.volumes.get_options_summary">
+<span class="sig-prename descclassname"><span class="pre">defillama.volumes.</span></span><span class="sig-name descname"><span class="pre">get_options_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'daily'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'premium'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.volumes.get_options_summary" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns summary of an options dex volume with historical data.</strong></p>
+<p>Function may return the following data:</p>
+<ul class="simple">
+<li><p>name: Name of the protocol</p></li>
+<li><p>displayName: Protocol name as displayed on DeFiLlama</p></li>
+<li><p>disabled: Whether the protocol is disabled or not</p></li>
+<li><p>logo: ‘<a class="reference external" href="https://icons.llama.fi/0x.png">https://icons.llama.fi/0x.png</a>’,</p></li>
+<li><p>address: Protocol address on the blockchain</p></li>
+<li><p>url: Protocol logo URL</p></li>
+<li><p>description: Protocol description</p></li>
+<li><p>audits: List of audits</p></li>
+<li><p>category: Category to which the protocol belongs</p></li>
+<li><p>twitter: Twitter handle of the protocol</p></li>
+<li><p>audit_links: List of audit links</p></li>
+<li><p>gecko_id: CoinGecko ID of the protocol</p></li>
+<li><p>totalDataChart: List of aggregated chart data with their timestamp</p></li>
+<li><p>totalDataChartBreakdown: List of aggregated chart data broken down by
+chains with their timestamp</p></li>
+<li><p>total24h: Total volume collected by the protocol in the
+last 24 hours</p></li>
+<li><p>total48hto24h: Total volume collected by the protocol in the
+last 48 hours to the last 24 hours</p></li>
+<li><p>total14dto7d: Total volume collected by the protocol in the
+last 14 days to the last 7 days</p></li>
+<li><p>totalAllTime: Total volume collected by the protocol since
+the beginning</p></li>
+<li><p>change_1d: Change in the protocol’s volume in the last 24 hours</p></li>
+<li><p>module: Name of the protocol as mentioned on adapter API</p></li>
+<li><p>protocolType: Whether its a protocol or a chain</p></li>
+<li><p>chains: List of chains supported by the protocol</p></li>
+<li><p>methodologyURL: URL of the methodology used to calculate the fees</p></li>
+<li><p>latestFetchIsOk: Whether the latest fetch was successful or not</p></li>
+<li><p>childProtocols: Protocols derived from this protocol</p></li>
+</ul>
+<p><em>Endpoint: GET /summary/options/{protocol}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>protocol</strong> (<em>str</em>) – Protocol name</p></li>
+<li><p><strong>data</strong> (<em>str</em>) – Request ‘daily’ or ‘total’ volume data.
+Defaults to ‘daily’.</p></li>
+<li><p><strong>type</strong> (<em>str</em>) – Request ‘premium’ or ‘notional’ volume data.
+Defaults to ‘premium’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-defillama.yields">
+<span id="yields-data-from-defillama-s-yields-apy-dashboard"></span><h1>yields: Data from DeFiLlama’s yields/APY dashboard<a class="headerlink" href="#module-defillama.yields" title="Permalink to this headline"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.yields.get_pool_chart">
+<span class="sig-prename descclassname"><span class="pre">defillama.yields.</span></span><span class="sig-name descname"><span class="pre">get_pool_chart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pool</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.yields.get_pool_chart" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns the historical APY and TVL data for a pool.</strong></p>
+<p>Function returns the following data:</p>
+<ul class="simple">
+<li><p>timestamp: Timestmap of the data</p></li>
+<li><p>tvlUsd: Current TVL in USD in the pool</p></li>
+<li><p>apy: Annual Percent Yield of the pool</p></li>
+<li><p>apyBase: Annual Percent Yield from pool fees/supplying in %</p></li>
+<li><p>apyReward: Annual Percent Yield from pool LM rewards in %</p></li>
+<li><p>il7d: Impermanent Loss within 7 days</p></li>
+<li><p>apyBase7d: Annual Percent Yield from pool fees/supplying in %
+within 7 days</p></li>
+</ul>
+<p><em>Endpoint: GET /chart/{pool}</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pool</strong> (<em>str</em>) – Pool ID.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defillama.yields.get_pools">
+<span class="sig-prename descclassname"><span class="pre">defillama.yields.</span></span><span class="sig-name descname"><span class="pre">get_pools</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.yields.get_pools" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Returns the latest data for all pools.</strong></p>
+<p>Function returns the following data:</p>
+<ul class="simple">
+<li><p>chain: Name of the chain the pool is on</p></li>
+<li><p>project: Protocol name</p></li>
+<li><p>symbol: Symbol of the pool</p></li>
+<li><p>tvlUsd: Current TVL in USD in the pool</p></li>
+<li><p>apyBase: Annual Percent Yield from pool fees/supplying in %</p></li>
+<li><p>apyReward: Annual Percent Yield from pool LM rewards in %</p></li>
+<li><p>apy: Current Annual Percent Yield of the pool</p></li>
+<li><p>rewardTokens: Reward token addresses</p></li>
+<li><p>pool: Pool ID</p></li>
+<li><p>apyPct1D: % change in Annual Percent Yield within 24 hours</p></li>
+<li><p>apyPct7D: % change in Annual Percent Yield within 7 days</p></li>
+<li><p>apyPct30D: % change in Annual Percent Yield within 30 days</p></li>
+<li><p>stablecoin: Stablecoins in the pool</p></li>
+<li><p>ilRisk: Whether Impermanent Loss Risk is associated with the pool</p></li>
+<li><p>exposure: ‘Single’ or ‘Multi’ token exposure to the pool</p></li>
+<li><p>predictions: Dictionary contating the ‘predictedClass’,
+‘predictedProbability’ and ‘binnedConfidence’ of the pool</p></li>
+<li><p>poolMeta: Wrapped tokens in the pool</p></li>
+<li><p>mu: Mean APY of the pool</p></li>
+<li><p>sigma: Standard Deviation of the APY of the pool</p></li>
+<li><p>count: Number of tokens in the pool</p></li>
+<li><p>outlier: ???</p></li>
+<li><p>underlyingTokens: Underlying token addresses from a pool</p></li>
+<li><p>il7d: Impermanent Loss within 7 days</p></li>
+<li><p>apyBase7d: Annual Percent Yield from pool fees/supplying in %
+within 7 days</p></li>
+<li><p>apyMean30d: Mean Annual Percent Yield of the pool within 30 days</p></li>
+<li><p>volumeUsd1d: Volume in USD within 24 hours of the tokens in the pool</p></li>
+<li><p>volumeUsd7d: Volume in USD within 7 days of the tokens in the pool</p></li>
+<li><p>apyBaseInception: ???</p></li>
+</ul>
+<p><em>Endpoint: GET /pools</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Requested data</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[Dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="DeFiLlama-Curl" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Pratyush Shukla.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
