@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>abi-decoder: Function and event signatures decoded &mdash; DeFiLlama-Curl 2.0.0 documentation</title>
@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -82,7 +83,7 @@
            <div itemprop="articleBody">
              
   <section id="module-defillama.abi_decoder">
-<span id="abi-decoder-function-and-event-signatures-decoded"></span><h1>abi-decoder: Function and event signatures decoded<a class="headerlink" href="#module-defillama.abi_decoder" title="Permalink to this headline"></a></h1>
+<span id="abi-decoder-function-and-event-signatures-decoded"></span><h1>abi-decoder: Function and event signatures decoded<a class="headerlink" href="#module-defillama.abi_decoder" title="Permalink to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="defillama.abi_decoder.get_contract_signature_abi">
 <span class="sig-prename descclassname"><span class="pre">defillama.abi_decoder.</span></span><span class="sig-name descname"><span class="pre">get_contract_signature_abi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_sign</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">events_sign</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.abi_decoder.get_contract_signature_abi" title="Permalink to this definition"></a></dt>
@@ -90,7 +91,7 @@
 event signature for a particular contract.</strong></p>
 <p><em>Endpoint: GET /fetch/contract/{chain}/{address}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>chain</strong> (<em>str</em>) – Chain the smart contract is located on. Can be either
 ‘arbitrum’, ‘avalanche’, ‘bsc’, ‘celo’, ‘ethereum’, ‘fantom’,
@@ -101,10 +102,10 @@ of the Keccak-256 hash</p></li>
 <li><p><strong>events_sign</strong> (<em>List</em>) – List of event signatures</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, Dict[str, any]]</p>
 </dd>
 </dl>
@@ -117,17 +118,17 @@ of the Keccak-256 hash</p></li>
 or event signature.</strong></p>
 <p><em>Endpoint: GET /fetch/signature</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>func_sign</strong> (<em>List</em>) – List of function signatures from the first 4 bytes
 of the Keccak-256 hash</p></li>
 <li><p><strong>events_sign</strong> (<em>List</em>) – List of event signatures</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, Dict[str, any]]</p>
 </dd>
 </dl>
@@ -135,7 +136,7 @@ of the Keccak-256 hash</p></li>
 
 </section>
 <section id="module-defillama.bridges">
-<span id="bridges-data-from-defillama-s-bridges-dashboard"></span><h1>bridges: Data from DeFiLlama’s bridges dashboard<a class="headerlink" href="#module-defillama.bridges" title="Permalink to this headline"></a></h1>
+<span id="bridges-data-from-defillama-s-bridges-dashboard"></span><h1>bridges: Data from DeFiLlama’s bridges dashboard<a class="headerlink" href="#module-defillama.bridges" title="Permalink to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="defillama.bridges.get_bridge_by_id">
 <span class="sig-prename descclassname"><span class="pre">defillama.bridges.</span></span><span class="sig-name descname"><span class="pre">get_bridge_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.bridges.get_bridge_by_id" title="Permalink to this definition"></a></dt>
@@ -163,13 +164,13 @@ with the given ID.</strong></p>
 </ul>
 <p><em>Endpoint: GET /bridges/{id}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>id</strong> (<em>int</em>) – Bridge ID</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, any]</p>
 </dd>
 </dl>
@@ -199,17 +200,17 @@ recent volumes.</strong></p>
 </ul>
 <p><em>Endpoint: GET /bridges</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>include_chains</strong> (<em>bool</em>) – Whether to include a list of chains.
 Defaults to True.</p></li>
 <li><p><strong>include_chains</strong> – bool:  (Default value = True)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>List[Dict[str, any]]</p>
 </dd>
 </dl>
@@ -232,7 +233,7 @@ the value.</p></li>
 </ul>
 <p><em>Endpoint: GET /bridgestats/{timestamp}/{chain}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>timestamp</strong> (<em>int</em>) – UNIX timestamp requested. Data returned will be for
 the 24hr period starting at 00: 00 UTC that the timestamp lands in.</p></li>
@@ -240,10 +241,10 @@ the 24hr period starting at 00: 00 UTC that the timestamp lands in.</p></li>
 <li><p><strong>id</strong> (<em>int</em>) – Bridge ID. Defaults to None.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, any]</p>
 </dd>
 </dl>
@@ -271,7 +272,7 @@ chain and with specified address as from or to.</p>
 </ul>
 <p><em>Endpoint: GET /transactions/{id}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>id</strong> (<em>int</em>) – Bridge ID</p></li>
 <li><p><strong>chain</strong> (<em>str</em>) – Chain slug</p></li>
@@ -282,10 +283,10 @@ chain and with specified address as from or to.</p>
 Defaults to 100.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>List[Dict[str, any]]</p>
 </dd>
 </dl>
@@ -306,17 +307,17 @@ particular chain.</strong></p>
 </ul>
 <p><em>Endpoint: GET /bridgevolume/{chain}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>chain</strong> (<em>str</em>) – Chain slug. Defaults to ‘all’ for volumes
 on all chain.</p></li>
 <li><p><strong>id</strong> (<em>int</em>) – Bridge ID. Defaults to None.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>List[Dict[str, any]]</p>
 </dd>
 </dl>
@@ -324,10 +325,10 @@ on all chain.</p></li>
 
 </section>
 <section id="module-defillama.coins">
-<span id="coins-general-blockchain-data-used-by-defillama"></span><h1>coins: General blockchain data used by DeFiLlama<a class="headerlink" href="#module-defillama.coins" title="Permalink to this headline"></a></h1>
+<span id="coins-general-blockchain-data-used-by-defillama"></span><h1>coins: General blockchain data used by DeFiLlama<a class="headerlink" href="#module-defillama.coins" title="Permalink to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="defillama.coins.get_charts">
-<span class="sig-prename descclassname"><span class="pre">defillama.coins.</span></span><span class="sig-name descname"><span class="pre">get_charts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1679976208</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'24h'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'3h'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.coins.get_charts" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">defillama.coins.</span></span><span class="sig-name descname"><span class="pre">get_charts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1680062340</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'24h'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'3h'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.coins.get_charts" title="Permalink to this definition"></a></dt>
 <dd><p><strong>Returns the token prices at regular time intervals.</strong></p>
 <p>Function returns a dictionary where the key is the requested token(s) with
 the contract address and the value is a dictionary containing the
@@ -341,7 +342,7 @@ respective prices</p></li>
 </ul>
 <p><em>Endpoint: GET /chart/{coins}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tokens</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of dictionaries having the tokens
 and their contract addresses in the form of {chain}: {address}.
@@ -357,10 +358,10 @@ Follows regular chart notion where W = Week, D = day, H = hour,
 M = minute (not case sensitive). Defaults to ‘6h’.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, Dict[str, any]]</p>
 </dd>
 </dl>
@@ -381,7 +382,7 @@ following data:</p>
 </ul>
 <p><em>Endpoint: GET /prices/current/{coins}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tokens</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of dictionaries having the tokens
 and their contract addresses in the form of {chain}: {address}.
@@ -391,10 +392,10 @@ Follows regular chart notion where W = Week, D = day, H = hour,
 M = minute (not case sensitive). Defaults to ‘6h’.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, Dict[str, any]]</p>
 </dd>
 </dl>
@@ -414,15 +415,15 @@ following data:</p>
 </ul>
 <p><em>Endpoint: GET /prices/first/{coins}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>tokens</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of dictionaries having
 {token}:{address} as the key-value pairs. Can also use
 ‘coingecko’: {protocol} for tokens listed on coingecko.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, Dict[str, any]]</p>
 </dd>
 </dl>
@@ -442,7 +443,7 @@ confidence of the token</p></li>
 </ul>
 <p><em>Endpoint: GET /batchHistorical</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tokens</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>List</em><em>]</em>) – List of dictionaries having the tokens
 and their contract addresses in the form of {chain}: {address}.
@@ -452,10 +453,10 @@ Follows regular chart notion where W = Week, D = day, H = hour,
 M = minute (not case sensitive). Defaults to ‘6h’.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, Dict[str, any]]</p>
 </dd>
 </dl>
@@ -463,7 +464,7 @@ M = minute (not case sensitive). Defaults to ‘6h’.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="defillama.coins.get_historical_prices">
-<span class="sig-prename descclassname"><span class="pre">defillama.coins.</span></span><span class="sig-name descname"><span class="pre">get_historical_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1679976208</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'6h'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.coins.get_historical_prices" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">defillama.coins.</span></span><span class="sig-name descname"><span class="pre">get_historical_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1680062340</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'6h'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.coins.get_historical_prices" title="Permalink to this definition"></a></dt>
 <dd><p><strong>Returns historical prices of tokens using their contract addresses.</strong></p>
 <p>Function returns a dictionary where the key is the requested token(s) with
 the contract address and the value is a dictionary containing the
@@ -476,7 +477,7 @@ following data:</p>
 </ul>
 <p><em>Endpoint: GET /prices/historical/{timestamp}/{coins}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tokens</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of dictionaries having the tokens
 and their contract addresses in the form of {chain}: {address}.
@@ -488,10 +489,10 @@ Follows regular chart notion where W = Week, D = day, H = hour,
 M = minute (not case sensitive). Defaults to ‘6h’.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, Dict[str, any]]</p>
 </dd>
 </dl>
@@ -507,16 +508,16 @@ database, so each query permanently speeds up future queries. The height
 and the timestamp of the block are returned.</p>
 <p><em>Endpoint: GET /block/{chain}/{timestamp}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>chain</strong> (<em>str</em>) – Chain slug</p></li>
 <li><p><strong>timestamp</strong> (<em>int</em>) – Timestamp of the block</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, int]</p>
 </dd>
 </dl>
@@ -530,7 +531,7 @@ and the timestamp of the block are returned.</p>
 key-value pairs.</p>
 <p><em>Endpoint: GET /percentage/{coins}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tokens</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of dictionaries having the tokens
 and their contract addresses in the form of {chain}: {address}.
@@ -544,10 +545,10 @@ where W = Week, D = day, H = hour, M = minute (not case sensitive).
 Defaults to ‘24h’.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, any]</p>
 </dd>
 </dl>
@@ -555,7 +556,7 @@ Defaults to ‘24h’.</p></li>
 
 </section>
 <section id="module-defillama.fees_revenue">
-<span id="fees-and-revenue-data-from-defillama-s-fees-and-revenue-dashboard"></span><h1>fees and revenue: Data from DeFiLlama’s fees and revenue dashboard<a class="headerlink" href="#module-defillama.fees_revenue" title="Permalink to this headline"></a></h1>
+<span id="fees-and-revenue-data-from-defillama-s-fees-and-revenue-dashboard"></span><h1>fees and revenue: Data from DeFiLlama’s fees and revenue dashboard<a class="headerlink" href="#module-defillama.fees_revenue" title="Permalink to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="defillama.fees_revenue.get_overview">
 <span class="sig-prename descclassname"><span class="pre">defillama.fees_revenue.</span></span><span class="sig-name descname"><span class="pre">get_overview</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exclude_total_data_chart</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_total_data_chart_breakdown</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'daily'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'fees'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.fees_revenue.get_overview" title="Permalink to this definition"></a></dt>
@@ -654,7 +655,7 @@ the protocols</p></li>
 </ul>
 <p><em>Endpoints: GET /overview/fees, GET /overview/fees/{chain}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>exclude_total_data_chart</strong> (<em>bool</em>) – To exclude aggregated chart
 from response. Defaults to False.</p></li>
@@ -667,10 +668,10 @@ Defaults to ‘fees’.</p></li>
 <li><p><strong>chain</strong> (<em>str</em>) – Chain slug. Defaults to None.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, any]</p>
 </dd>
 </dl>
@@ -711,7 +712,7 @@ childProtocols: Protocols derived from this protocol</p></li>
 </ul>
 <p><em>Endpoint: GET /summary/fees/{protocol}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>protocol</strong> (<em>str</em>) – Protocol slug</p></li>
 <li><p><strong>data</strong> (<em>str</em>) – Request ‘daily’ or ‘total’ data.
@@ -720,10 +721,10 @@ Defaults to ‘daily’.</p></li>
 Defaults to ‘fees’.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, any]</p>
 </dd>
 </dl>
@@ -731,7 +732,7 @@ Defaults to ‘fees’.</p></li>
 
 </section>
 <section id="module-defillama.stablecoins">
-<span id="stablecoins-data-from-defillama-s-stablecoins-dashboard"></span><h1>stablecoins: Data from DeFiLlama’s stablecoins dashboard<a class="headerlink" href="#module-defillama.stablecoins" title="Permalink to this headline"></a></h1>
+<span id="stablecoins-data-from-defillama-s-stablecoins-dashboard"></span><h1>stablecoins: Data from DeFiLlama’s stablecoins dashboard<a class="headerlink" href="#module-defillama.stablecoins" title="Permalink to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="defillama.stablecoins.get_chains">
 <span class="sig-prename descclassname"><span class="pre">defillama.stablecoins.</span></span><span class="sig-name descname"><span class="pre">get_chains</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.stablecoins.get_chains" title="Permalink to this definition"></a></dt>
@@ -746,10 +747,10 @@ in USD</p></li>
 </ul>
 <p><em>Endpoint: GET /stablecoinchains</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Requested data</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>List[Dict[str, any]]</p>
 </dd>
 </dl>
@@ -773,7 +774,7 @@ in USD</p></li>
 </ul>
 <p><em>Endpoints: GET /stablecoincharts/all, GET /stablecoincharts/{chain}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>type</strong> (<em>str</em>) – Request data for ‘all’ stablecoins or those in ‘chain’.
 Defaults to “all”.</p></li>
@@ -783,10 +784,10 @@ Defaults to None.</p></li>
 Defaults to None.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>List[Dict[str, any]]</p>
 </dd>
 </dl>
@@ -822,13 +823,13 @@ stablecoin is available alongwith their ‘tokens’, ‘circulating’,
 </ul>
 <p><em>Endpoint: GET /stablecoin/{asset}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>stablecoin</strong> (<em>int</em>) – Stablecoin ID.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, any]</p>
 </dd>
 </dl>
@@ -845,10 +846,10 @@ stablecoin is available alongwith their ‘tokens’, ‘circulating’,
 </ul>
 <p><em>Endpoint: GET /stablecoinprices</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Requested data</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>List[Dict[str, any]]</p>
 </dd>
 </dl>
@@ -879,14 +880,14 @@ currency</p></li>
 </ul>
 <p><em>Endpoint: GET /stablecoins</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>include_prices</strong> (<em>bool</em>) – whether to include current stablecoin prices.
 Defaults to True.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>List[Dict[str, any]]</p>
 </dd>
 </dl>
@@ -894,7 +895,7 @@ Defaults to True.</p>
 
 </section>
 <section id="module-defillama.tvl">
-<span id="tvl-retrieve-tvl-data"></span><h1>tvl: Retrieve TVL data<a class="headerlink" href="#module-defillama.tvl" title="Permalink to this headline"></a></h1>
+<span id="tvl-retrieve-tvl-data"></span><h1>tvl: Retrieve TVL data<a class="headerlink" href="#module-defillama.tvl" title="Permalink to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="defillama.tvl.get_chains">
 <span class="sig-prename descclassname"><span class="pre">defillama.tvl.</span></span><span class="sig-name descname"><span class="pre">get_chains</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.tvl.get_chains" title="Permalink to this definition"></a></dt>
@@ -910,10 +911,10 @@ Defaults to True.</p>
 </ul>
 <p><em>Endpoint: GET /chains</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Requested data</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>List[Dict]</p>
 </dd>
 </dl>
@@ -932,13 +933,13 @@ by default.</p>
 </ul>
 <p><em>Endpoints: GET /charts, GET /charts/{chain}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>chain</strong> (<em>str</em>) – Chain slug. Defaults to None.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>List[Dict]</p>
 </dd>
 </dl>
@@ -958,13 +959,13 @@ and double counted TVL) for all chains is returned by default.</p>
 </ul>
 <p><em>Endpoints: GET /historicalChainTVL, GET /historicalChainTVL/{chain}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>chain</strong> (<em>str</em>) – Chain slug. Defaults to None.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>List[Dict]</p>
 </dd>
 </dl>
@@ -976,13 +977,13 @@ and double counted TVL) for all chains is returned by default.</p>
 <dd><p><strong>Returns the current TVL of a specified protocol.</strong></p>
 <p><em>Endpoint: GET /tvl/{protocol}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>protocol</strong> (<em>str</em>) – Protocol slug</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Current TVL of the specified protocol</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -1046,13 +1047,13 @@ specified.</p></li>
 </ul>
 <p><em>Endpoints: GET /protocols, GET /protocol/{protocol}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>protocol</strong> (<em>str</em>) – Protocol slug. Defaults to None.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>List[Dict] | Dict</p>
 </dd>
 </dl>
@@ -1060,7 +1061,7 @@ specified.</p></li>
 
 </section>
 <section id="module-defillama.volumes">
-<span id="volumes-data-from-defillama-s-volumes-dashboards"></span><h1>volumes: Data from DeFiLlama’s volumes dashboards<a class="headerlink" href="#module-defillama.volumes" title="Permalink to this headline"></a></h1>
+<span id="volumes-data-from-defillama-s-volumes-dashboards"></span><h1>volumes: Data from DeFiLlama’s volumes dashboards<a class="headerlink" href="#module-defillama.volumes" title="Permalink to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="defillama.volumes.get_dex_overview">
 <span class="sig-prename descclassname"><span class="pre">defillama.volumes.</span></span><span class="sig-name descname"><span class="pre">get_dex_overview</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exclude_total_data_chart</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_total_data_chart_breakdown</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'daily'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.volumes.get_dex_overview" title="Permalink to this definition"></a></dt>
@@ -1118,7 +1119,7 @@ the fees</p></li>
 </ul>
 <p><em>Endpoint: GET /overview/dexs, GET /overview/dexs/{chain}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>exclude_total_data_chart</strong> (<em>bool</em>) – To exclude aggregated chart
 from response. Defaults to False.</p></li>
@@ -1129,10 +1130,10 @@ Defaults to ‘daily’.</p></li>
 <li><p><strong>chain</strong> (<em>str</em>) – Chain slug. Defaults to None.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, any]</p>
 </dd>
 </dl>
@@ -1178,7 +1179,7 @@ the beginning</p></li>
 </ul>
 <p><em>Endpoint: GET /summary/dexs/{protocol}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>protocol</strong> (<em>str</em>) – Protocol slug</p></li>
 <li><p><strong>exclude_total_data_chart</strong> (<em>bool</em>) – To exclude aggregated chart
@@ -1189,10 +1190,10 @@ down chart from response. Defaults to False.</p></li>
 Defaults to ‘daily’.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, any]</p>
 </dd>
 </dl>
@@ -1255,7 +1256,7 @@ the fees</p></li>
 </ul>
 <p><em>Endpoint: GET /overview/options, GET /overview/options/{chain}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>exclude_total_data_chart</strong> (<em>bool</em>) – To exclude aggregated chart
 from response. Defaults to False.</p></li>
@@ -1268,10 +1269,10 @@ Defaults to ‘premium’.</p></li>
 <li><p><strong>chain</strong> (<em>str</em>) – Chain slug. Defaults to None.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, any]</p>
 </dd>
 </dl>
@@ -1316,7 +1317,7 @@ the beginning</p></li>
 </ul>
 <p><em>Endpoint: GET /summary/options/{protocol}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>protocol</strong> (<em>str</em>) – Protocol name</p></li>
 <li><p><strong>data</strong> (<em>str</em>) – Request ‘daily’ or ‘total’ volume data.
@@ -1325,10 +1326,10 @@ Defaults to ‘daily’.</p></li>
 Defaults to ‘premium’.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, any]</p>
 </dd>
 </dl>
@@ -1336,7 +1337,7 @@ Defaults to ‘premium’.</p></li>
 
 </section>
 <section id="module-defillama.yields">
-<span id="yields-data-from-defillama-s-yields-apy-dashboard"></span><h1>yields: Data from DeFiLlama’s yields/APY dashboard<a class="headerlink" href="#module-defillama.yields" title="Permalink to this headline"></a></h1>
+<span id="yields-data-from-defillama-s-yields-apy-dashboard"></span><h1>yields: Data from DeFiLlama’s yields/APY dashboard<a class="headerlink" href="#module-defillama.yields" title="Permalink to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="defillama.yields.get_pool_chart">
 <span class="sig-prename descclassname"><span class="pre">defillama.yields.</span></span><span class="sig-name descname"><span class="pre">get_pool_chart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pool</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#defillama.yields.get_pool_chart" title="Permalink to this definition"></a></dt>
@@ -1354,13 +1355,13 @@ within 7 days</p></li>
 </ul>
 <p><em>Endpoint: GET /chart/{pool}</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>pool</strong> (<em>str</em>) – Pool ID.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Requested data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>List[Dict[str, any]]</p>
 </dd>
 </dl>
@@ -1405,10 +1406,10 @@ within 7 days</p></li>
 </ul>
 <p><em>Endpoint: GET /pools</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Requested data</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>List[Dict[str, any]]</p>
 </dd>
 </dl>

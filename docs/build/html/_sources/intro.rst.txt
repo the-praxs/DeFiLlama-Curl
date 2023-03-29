@@ -24,10 +24,12 @@ Limitations
 Installation
 ************
 
-The package is published on `PyPi <https://pypi.org/project/DeFiLlama-Curl/>`_ and Anaconda (link). To install the module, simply run the following command in the terminal:
+The package is hosted on both `PyPi <https://pypi.org/project/DeFiLlama-Curl/>`_ and `Anaconda <https://anaconda.org/conda-forge/defillama-curl>`_.
+
+To install using pip, run the following command:
 
 ``pip install DeFiLlama-Curl``
 
-or
+To install using conda, run the following command:
 
-``conda install -c anaconda defillama-curl``
+``conda install -c conda-forge defillama-curl``
