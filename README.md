@@ -13,15 +13,15 @@
 
 -------
 
-### Unofficial Python 3 wrapper for the [DeFiLlama API](https://defillama.com/home) using the fantastic [PyCurl](http://pycurl.io/) module
+### Unofficial Python 3 wrapper for the [DeFiLlama](https://defillama.com/home) API using the fantastic [PyCurl](http://pycurl.io/) module
 
 Built from the ground up to be fast, reliable and easy to use.
 
-For detailed information about the API endpoints, see [DeFiLlama API Documentation](https://defillama.com/docs/api)
+For detailed information about the API endpoints, see DeFiLlama API [Documentation](https://defillama.com/docs/api)
 
 ### Installation:
 
-Use either pip or conda to install:
+Use either [pip](https://pypi.org/project/DeFiLlama-Curl/) or [conda](https://anaconda.org/conda-forge/defillama-curl) to install:
 
 ```python
 pip install DeFiLlama-Curl
