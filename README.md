@@ -1,13 +1,14 @@
 # DeFiLlama Python API
 
 ![Python](https://img.shields.io/pypi/pyversions/DeFiLlama-Curl?style=flat-square)
+[![Conda](https://img.shields.io/conda/v/conda-forge/defillama-curl)](https://anaconda.org/conda-forge/defillama-curl)
 ![Platforms](https://anaconda.org/conda-forge/defillama-curl/badges/platforms.svg)
-![Downloads](https://anaconda.org/conda-forge/defillama-curl/badges/downloads.svg)
+![Conda Downloads](https://anaconda.org/conda-forge/defillama-curl/badges/downloads.svg)
 ![Last Updated](https://anaconda.org/conda-forge/defillama-curl/badges/latest_release_date.svg)
 
 [![PyPi](https://img.shields.io/pypi/v/DeFiLlama-Curl)](https://pypi.org/project/DeFiLlama-Curl/)
 [![Wheel](https://img.shields.io/pypi/wheel/DeFiLlama-Curl)](https://github.com/the-praxs/DeFiLlama-Curl/releases)
-[![Conda](https://img.shields.io/conda/v/conda-forge/defillama-curl)](https://anaconda.org/conda-forge/defillama-curl)
+[![PyPi Downloads](https://static.pepy.tech/badge/defillama-curl)](https://pepy.tech/project/defillama-curl)
 [![Documentation Status](https://readthedocs.org/projects/defillama-curl/badge/?version=latest)](https://defillama-curl.readthedocs.io/en/latest/?badge=latest)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
