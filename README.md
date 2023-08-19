@@ -41,4 +41,14 @@ Endpoints are accessible without requiring any API key.
 
 ### Documentation:
 
-Extensive documentation is available [here](http://defillama-curl.readthedocs.io/)
+Extensive documentation is available [here.](http://defillama-curl.readthedocs.io/)
+
+-----------
+
+### Debugging
+
+If you receive this error after importing the library, the solution can be found [here.](https://stackoverflow.com/questions/47888757/importerror-pycurl-libcurl-link-time-ssl-backend-openssl-is-different-from-c/74173308#74173308) (Credits to [imrane](https://github.com/imrane))
+
+```python
+ImportError: pycurl: libcurl link-time ssl backends (secure-transport, openssl) do not include compile-time ssl backend (none/other)
+```
