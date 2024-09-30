@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "DeFiLlama-Curl"
+version = "2.1.0"
+description = "Unofficial Python wrapper for DeFi Llama API client using the PyCurl module."
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Pratyush Shukla", email = "ps4534@nyu.edu"},
+]
+classifiers = [
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "pycurl>=7.44.1",
+]
+
+[tool.setuptools.packages]
+find = { include = ["defillama"] }
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "ruff",
+    "pytest",
+]
+
+[project.urls]
+Homepage = "https://github.com/the-praxs/DeFiLlama"
