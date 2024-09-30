@@ -7,3 +7,5 @@ build/
 .pytest_cache/
 .DS_Store
 *.pyc
+*.egg-info
+src/defillama/__version__.py
