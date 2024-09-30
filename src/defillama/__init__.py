@@ -3,7 +3,7 @@
 
    The DeFiLlama API is a free, open-source API that provides access to DeFi
    data. It is maintained by DeFiLlama.com, a DeFi data aggregator. This
-   Python wrapper is developed to prvoide access to those API requests in a
+   Python wrapper is developed to provide access to those API requests in a
    simple and easy to use manner.
 
    This API contains the following submodules:
@@ -17,5 +17,10 @@
    - yields: Data from DeFiLlama's yields/APY dashboard
 """
 
-__all__ = ['__version__', '_utils', 'tvl', 'coins', 'stablecoins', 'yields',
+from .__version__ import __version__
+
+__all__ = ['tvl', 'coins', 'stablecoins', 'yields',
            'abi_decoder', 'bridges', 'volumes', 'fees_revenue']
+
+# Import submodules
+from . import tvl, coins, stablecoins, yields, abi_decoder, bridges, volumes, fees_revenue
