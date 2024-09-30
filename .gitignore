@@ -4,3 +4,6 @@ dist/
 build/
 !docs/build/
 .vscode/
+.pytest_cache/
+.DS_Store
+*.pyc
