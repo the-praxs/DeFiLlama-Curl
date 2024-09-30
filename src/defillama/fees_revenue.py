@@ -4,11 +4,13 @@ from ._utils import get
 BASE_URL = "https://api.llama.fi"
 
 
-def get_overview(exclude_total_data_chart: bool = False,
-                 exclude_total_data_chart_breakdown: bool = False,
-                 data: str = 'daily',
-                 type: str = 'fees',
-                 chain: str = None) -> Dict[str, any]:
+def get_overview(
+    exclude_total_data_chart: bool = False,
+    exclude_total_data_chart_breakdown: bool = False,
+    data: str = "daily",
+    type: str = "fees",
+    chain: str = None,
+) -> Dict[str, any]:
     """**Returns a list of protocols alongwith summaries of their fees and
     revenue data and fees/revenue historical data.**
 
@@ -126,19 +128,19 @@ def get_overview(exclude_total_data_chart: bool = False,
 
     excludeTotalDataChart = str(exclude_total_data_chart).lower()
     excludeTotalDataChartBreakdown = str(exclude_total_data_chart_breakdown).lower()
-    dataType = f'{data}{type.capitalize()}'
+    dataType = f"{data}{type.capitalize()}"
 
     if chain is None:
-        url = f'{BASE_URL}/overview/fees?excludeTotalDataChart={excludeTotalDataChart}&excludeTotalDataChartBreakdown={excludeTotalDataChartBreakdown}&dataType={dataType}'
+        url = f"{BASE_URL}/overview/fees?excludeTotalDataChart={excludeTotalDataChart}&excludeTotalDataChartBreakdown={excludeTotalDataChartBreakdown}&dataType={dataType}"
     else:
-        url = f'{BASE_URL}/overview/fees/{chain}?excludeTotalDataChart={excludeTotalDataChart}&excludeTotalDataChartBreakdown={excludeTotalDataChartBreakdown}&dataType={dataType}'
+        url = f"{BASE_URL}/overview/fees/{chain}?excludeTotalDataChart={excludeTotalDataChart}&excludeTotalDataChartBreakdown={excludeTotalDataChartBreakdown}&dataType={dataType}"
 
     return get(url)
 
 
-def get_summary(protocol: str,
-                data: str = 'daily',
-                type: str = 'fees') -> Dict[str, any]:
+def get_summary(
+    protocol: str, data: str = "daily", type: str = "fees"
+) -> Dict[str, any]:
     """**Returns a summary of the fees/revenue collected by a protocol with
     historical data.**
 
@@ -186,8 +188,8 @@ def get_summary(protocol: str,
 
     """
 
-    dataType = f'{data}{type.capitalize()}'
+    dataType = f"{data}{type.capitalize()}"
 
-    url = f'{BASE_URL}/summary/fees/{protocol}?dataType={dataType}'
+    url = f"{BASE_URL}/summary/fees/{protocol}?dataType={dataType}"
 
     return get(url)

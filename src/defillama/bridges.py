@@ -40,7 +40,7 @@ def get_bridges(include_chains: bool = True) -> List[Dict[str, any]]:
 
     url = f"{BASE_URL}/bridges?includeChains={str(include_chains).lower()}"
 
-    return get(url)['bridges']
+    return get(url)["bridges"]
 
 
 def get_bridge_by_id(id: int) -> Dict[str, any]:
@@ -82,8 +82,7 @@ def get_bridge_by_id(id: int) -> Dict[str, any]:
     return get(url)
 
 
-def get_volume(chain: str = 'all',
-               id: int = None) -> List[Dict[str, any]]:
+def get_volume(chain: str = "all", id: int = None) -> List[Dict[str, any]]:
     """**Returns histirical volume data for a bridge, chain, or bridge on a
     particular chain.**
 
@@ -116,9 +115,7 @@ def get_volume(chain: str = 'all',
     return get(url)
 
 
-def get_stats(timestamp: int,
-              chain: str,
-              id: int = None) -> Dict[str, any]:
+def get_stats(timestamp: int, chain: str, id: int = None) -> Dict[str, any]:
     """**Returns a 24 hour token and address volume breakdown for a bridge.**
 
     Function returns the following data:
@@ -158,12 +155,9 @@ def get_stats(timestamp: int,
     return get(url)
 
 
-def get_transactions(id: int,
-                     chain: str,
-                     address: dict,
-                     start: int,
-                     end: int,
-                     limit: int = 100) -> List[Dict[str, any]]:
+def get_transactions(
+    id: int, chain: str, address: dict, start: int, end: int, limit: int = 100
+) -> List[Dict[str, any]]:
     """**Returns all the transactions for a bridge within a date range.**
 
     Transactions are only returned that are bridging from the specified source

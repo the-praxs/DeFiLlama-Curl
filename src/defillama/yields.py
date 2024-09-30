@@ -49,7 +49,7 @@ def get_pools() -> List[Dict[str, any]]:
 
     url = f"{BASE_URL}/pools"
 
-    return get(url)['data']
+    return get(url)["data"]
 
 
 def get_pool_chart(pool: str) -> List[Dict[str, any]]:
@@ -78,4 +78,4 @@ def get_pool_chart(pool: str) -> List[Dict[str, any]]:
 
     url = f"{BASE_URL}/chart/{pool}"
 
-    return get(url)['data']
+    return get(url)["data"]

@@ -19,8 +19,25 @@
 
 from .__version__ import __version__
 
-__all__ = ['tvl', 'coins', 'stablecoins', 'yields',
-           'abi_decoder', 'bridges', 'volumes', 'fees_revenue']
+__all__ = [
+    "tvl",
+    "coins",
+    "stablecoins",
+    "yields",
+    "abi_decoder",
+    "bridges",
+    "volumes",
+    "fees_revenue",
+]
 
 # Import submodules
-from . import tvl, coins, stablecoins, yields, abi_decoder, bridges, volumes, fees_revenue
+from . import (
+    tvl,
+    coins,
+    stablecoins,
+    yields,
+    abi_decoder,
+    bridges,
+    volumes,
+    fees_revenue,
+)

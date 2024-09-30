@@ -4,8 +4,9 @@ from ._utils import get, arg_parser
 BASE_URL = "https://abi-decoder.llama.fi"
 
 
-def get_signature_abi(func_sign: List,
-                      events_sign: List = None) -> Dict[str, Dict[str, any]]:
+def get_signature_abi(
+    func_sign: List, events_sign: List = None
+) -> Dict[str, Dict[str, any]]:
     """**Returns the Application Binary Interface for a function
     or event signature.**
 
@@ -22,21 +23,20 @@ def get_signature_abi(func_sign: List,
 
     """
 
-    func_sign = arg_parser(func_sign, format='list')
+    func_sign = arg_parser(func_sign, format="list")
 
     if events_sign is None:
         url = f"{BASE_URL}/fetch/signature?functions={func_sign}"
     else:
-        events_sign = arg_parser(events_sign, format='list')
+        events_sign = arg_parser(events_sign, format="list")
         url = f"{BASE_URL}/fetch/signature?functions={func_sign}&events={events_sign}"
 
     return get(url)
 
 
-def get_contract_signature_abi(chain: str,
-                               address: str,
-                               func_sign: List,
-                               events_sign: List = None) -> Dict[str, Dict[str, any]]:
+def get_contract_signature_abi(
+    chain: str, address: str, func_sign: List, events_sign: List = None
+) -> Dict[str, Dict[str, any]]:
     """**Returns the verbose Application Binary Interface for a function or
     event signature for a particular contract.**
 
@@ -59,12 +59,12 @@ def get_contract_signature_abi(chain: str,
 
     """
 
-    func_sign = arg_parser(func_sign, format='list')
+    func_sign = arg_parser(func_sign, format="list")
 
     if events_sign is None:
         url = f"{BASE_URL}/fetch/contract/{chain}/{address}?functions={func_sign}"
     else:
-        events_sign = arg_parser(events_sign, format='list')
+        events_sign = arg_parser(events_sign, format="list")
         url = f"{BASE_URL}/fetch/contract/{chain}/{address}?functions={func_sign}&events={events_sign}"
 
     return get(url)

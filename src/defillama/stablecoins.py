@@ -39,12 +39,12 @@ def get_stablecoins(include_prices: bool = True) -> List[Dict[str, any]]:
 
     url = f"{BASE_URL}/stablecoins?includePrices={str(include_prices).lower()}"
 
-    return get(url)['peggedAssets']
+    return get(url)["peggedAssets"]
 
 
-def get_charts(type: str = "all",
-               chain: str = None,
-               stablecoin: int = None) -> List[Dict[str, any]]:
+def get_charts(
+    type: str = "all", chain: str = None, stablecoin: int = None
+) -> List[Dict[str, any]]:
     """**Returns historical market cap sum of all stablecoins or on a given
     chain.**
 

@@ -4,10 +4,12 @@ from ._utils import get
 BASE_URL = "https://api.llama.fi"
 
 
-def get_dex_overview(exclude_total_data_chart: bool = False,
-                     exclude_total_data_chart_breakdown: bool = False,
-                     data: str = "daily",
-                     chain: str = None) -> Dict[str, any]:
+def get_dex_overview(
+    exclude_total_data_chart: bool = False,
+    exclude_total_data_chart_breakdown: bool = False,
+    data: str = "daily",
+    chain: str = None,
+) -> Dict[str, any]:
     """**Returns all dexs with their volume summaries and history for all or
     specified chain.**
 
@@ -90,10 +92,12 @@ def get_dex_overview(exclude_total_data_chart: bool = False,
     return get(url)
 
 
-def get_dex_summary(protocol: str,
-                    exclude_total_data_chart: bool = False,
-                    exclude_total_data_chart_breakdown: bool = False,
-                    data: str = "daily") -> Dict[str, any]:
+def get_dex_summary(
+    protocol: str,
+    exclude_total_data_chart: bool = False,
+    exclude_total_data_chart_breakdown: bool = False,
+    data: str = "daily",
+) -> Dict[str, any]:
     """**Returns summary of a dex volume with historical data.**
 
     Function may return the following data:
@@ -158,11 +162,13 @@ def get_dex_summary(protocol: str,
     return get(url)
 
 
-def get_options_overview(exclude_total_data_chart: bool = False,
-                         exclude_total_data_chart_breakdown: bool = False,
-                         data: str = "daily",
-                         type: str = "premium",
-                         chain: str = None) -> Dict[str, any]:
+def get_options_overview(
+    exclude_total_data_chart: bool = False,
+    exclude_total_data_chart_breakdown: bool = False,
+    data: str = "daily",
+    type: str = "premium",
+    chain: str = None,
+) -> Dict[str, any]:
     """**Returns all options dexs with their volume summaries and history for
     all or specified chain.**
 
@@ -248,9 +254,9 @@ def get_options_overview(exclude_total_data_chart: bool = False,
     return get(url)
 
 
-def get_options_summary(protocol: str,
-                        data: str = "daily",
-                        type: str = "premium") -> Dict[str, any]:
+def get_options_summary(
+    protocol: str, data: str = "daily", type: str = "premium"
+) -> Dict[str, any]:
     """**Returns summary of an options dex volume with historical data.**
 
     Function may return the following data:
