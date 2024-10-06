@@ -3,3 +3,4 @@ DeFiLlama_Curl.egg-info/
 dist/
 build/
 !docs/build/
+*pyc
