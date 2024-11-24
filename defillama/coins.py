@@ -1,6 +1,6 @@
 import time
 import math
-from typing import List, Dict
+from typing import List, Dict, Optional
 from ._utils import get, arg_parser
 
 BASE_URL = "https://coins.llama.fi"
@@ -42,7 +42,7 @@ def get_current_prices(tokens: List[Dict[str, str]],
 
 
 def get_historical_prices(tokens: List[Dict[str, str]],
-                          timestamp: int = math.floor(time.time()),
+                          timestamp: int,
                           search_width: str = '6h') -> Dict[str, Dict[str, any]]:
     """**Returns historical prices of tokens using their contract addresses.**
 
@@ -115,8 +115,8 @@ def get_historical_batch(tokens: Dict[str, List],
 
 
 def get_charts(tokens: List[Dict[str, str]],
-               start: int = None,
-               end: int = math.floor(time.time()),
+               start: Optional[int],
+               end: Optional[int],
                span: int = 0,
                period: str = '24h',
                search_width: str = '3h') -> Dict[str, Dict[str, any]]:
