@@ -14,6 +14,7 @@ requires-python = ">=3.10"
 license = {file = "LICENSE"}
 dependencies = [
     "pycurl>=7.45.0",
+    "certifi>=2024.8.30",
     "typing-extensions>=4.11.0",
 ]
 classifiers = [
@@ -44,7 +45,7 @@ Repository = "https://github.com/the-praxs/DeFiLlama-Curl"
 [tool.ruff]
 target-version = "py310"
 line-length = 88
-select = [
+lint.select = [
     "E",  # pycodestyle errors
     "W",  # pycodestyle warnings
     "F",  # pyflakes
