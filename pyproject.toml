@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "DeFiLlama-Curl"
+version = "3.0.0"
+description = "Unofficial Python wrapper for DeFi Llama API client using the PyCurl module."
+authors = [
+    {name = "Pratyush Shukla", email = "ps4534@nyu.edu"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dependencies = [
+    "pycurl>=7.45.0",
+    "certifi>=2024.8.30",
+    "typing-extensions>=4.11.0",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-recording>=0.13.0",
+    "vcrpy>=5.1.0",
+    "ruff>=0.1.6",
+]
+
+[project.urls]
+Homepage = "https://github.com/the-praxs/DeFiLlama"
+Documentation = "https://defillama-curl.readthedocs.io/"
+Repository = "https://github.com/the-praxs/DeFiLlama-Curl"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 88
+lint.select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["defillama*"]
+exclude = ["defillama.tests*"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --cov=defillama --cov-report=term-missing"
+testpaths = [
+    "tests",
+]
+markers = [
+    "vcr: marks tests that use VCR.py for HTTP recording",
+]
